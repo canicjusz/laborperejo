@@ -1,0 +1,27 @@
+@use './functions'
+
+@mixin no-padding-margin
+  padding: 0
+  margin: 0
+
+@mixin circlePhoto($side)
+  border-radius: 50%
+  height: $side
+  width: $side
+  object-fit: cover
+  
+@mixin square($side)
+  width: $side
+  height: $side
+
+@mixin center($inline: false, $text: false)
+  justify-content: center
+  align-items: center
+
+  @if $text
+    text-align: center
+
+  @if $inline
+    display: inline-flex
+  @else 
+    display: flex

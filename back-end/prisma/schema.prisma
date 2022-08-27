@@ -1,0 +1,117 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "fullTextIndex"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  ID Int @id @default(autoincrement())
+  name String
+  email String @unique
+  password String
+  confirmed Boolean @default(false)
+  ban Boolean @default(false)
+  password_token PasswordToken?
+  role Role @default(user)
+  profile Profile?
+  companies Company[]
+  watchlist Offer[]
+  created_at DateTime @default(now())
+  subscription Boolean
+
+  @@unique([ID, name])
+  @@index([ID, name])
+}
+
+model Profile {
+  ID Int @id @default(autoincrement())
+  user_name String
+  avatar String
+  country String
+  place String
+  searching Boolean @default(false)
+  languages Json
+  job String?
+  mv String?
+  vk String?
+  fb String?
+  li String?
+  website String?
+  content String @db.Text
+  resume String?
+  email String
+  phone String?
+  user_ID Int
+  user User @relation(fields: [user_ID, user_name], references: [ID, name])
+  created_at DateTime @default(now())
+
+  @@unique([user_ID, user_name])
+  @@fulltext([content, user_name])
+}
+
+model Company {
+  ID Int @id @default(autoincrement())
+  owner Int
+  name String
+  logo String
+  administrators User[]
+  industry String
+  description String @db.Text
+  country String
+  address String
+  phone String?
+  li String?
+  website String?
+  email String
+  offers Offer[]
+  created_at DateTime @default(now())
+
+  @@fulltext([name, description])
+}
+
+model Offer {
+  ID Int @id @default(autoincrement())
+  company Company @relation(fields: [company_ID], references: [ID])
+  company_ID Int
+  followers User[]
+  title String
+  description String @db.Text
+  salary Boolean
+  reward String
+  categories Json
+  arrangement String
+  employment String
+  place String
+  country String
+  closed Boolean @default(true)
+  close_at DateTime?
+  created_at DateTime @default(now())
+
+  @@fulltext([title, description])
+}
+
+model Session {
+  id        String   @id
+  sid       String   @unique
+  data      String
+  expiresAt   DateTime
+}
+
+model PasswordToken {
+  token String @id
+  user User? @relation(fields: [user_ID], references: [ID])
+  user_ID Int @unique
+  expiresAt   DateTime
+}
+
+enum Role {
+  user
+  administrator
+}

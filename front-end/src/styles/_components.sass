@@ -1,0 +1,478 @@
+@use "sass:map"
+@use './abstracts/misc'
+@use './abstracts/colors' 
+@use './abstracts/typography' 
+@use './abstracts/functions'
+@use './abstracts/mixins'
+
+@mixin buttonModifier($color1, $color2)
+  background: $color1
+  border: functions.generateBorder(2, $color1)
+
+  &:hover
+    background: $color2
+    border: functions.generateBorder(2, $color2)
+  
+@mixin button
+  cursor: pointer
+  border: functions.generateBorder(2, colors.$najszarszy)
+  text-decoration: none
+  @include mixins.center(true, true)
+  font-family: typography.$open-sans
+  box-sizing: border-box
+  transition: 0.3s background, 0.3s border-color
+  cursor: pointer
+  height: 50px
+  color: colors.$bialy
+  font-size: 20px
+
+  &:hover
+    background: colors.$najszarszy
+
+  &:disabled
+    @include buttonModifier(colors.$szarszy, colors.$szarszy)
+    color: colors.$najszarszy
+    cursor: not-allowed
+
+  &--round
+    border-radius: 30px
+
+  &--blue
+    @include buttonModifier(colors.$niebieski-link, colors.$navy)
+
+  &--green
+    @include buttonModifier(colors.$zielony, colors.$ciemny-zielony)
+
+  &--red
+    @include buttonModifier(colors.$crimson, colors.$bordowy)
+
+@mixin link
+  font-family: typography.$open-sans
+  color: colors.$niebieski-link
+  cursor: pointer
+  user-select: none
+
+@mixin essential-form
+  width: 250px
+
+  &__part
+    margin-bottom: 15px
+
+  &__container
+    @include mixins.center(false, false)
+    min-height: map.get(misc.$heights, "but-header-footer")
+    width: 100%
+
+  &__title
+    font-family: typography.$raleway
+    font-size: typography.$large
+
+  &__label
+    font-family: typography.$open-sans
+
+  &__button
+    width: 100%
+    @include button
+
+@mixin table
+  font-family: typography.$open-sans
+  border-collapse: collapse
+  width: 100%
+
+  &__button
+    cursor: pointer
+    background: colors.$crimson
+    color: colors.$bialy
+    border: none
+    border-radius: 50%
+    transition: 0.3s background
+    @include mixins.square(42px)
+    @include mixins.center(true, false)
+
+    &:hover
+      background: colors.$bordowy
+
+    &--blue
+      background: colors.$niebieski-link
+
+      &:hover
+        background: colors.$navy
+
+    &:disabled
+      cursor: not-allowed
+      background: colors.$szarszy
+
+  &__shape
+    margin-top: 10px
+    border-radius: 5px 5px 3px 3px
+    overflow: auto
+    border-right: functions.generateBorder(1, colors.$niebieski-link)
+    border-left: functions.generateBorder(1, colors.$niebieski-link)
+    border-bottom: functions.generateBorder(3, colors.$niebieski-link)
+
+  &__head
+    color: colors.$bialy
+    background: colors.$niebieski-link
+
+  &__cell, &__column-title
+    text-align: center
+    padding: 12px 15px
+
+  &__cell-info
+    padding: 10px
+    text-align: center
+    font-family: typography.$raleway
+
+  &__img
+    @include mixins.circlePhoto(100px)
+
+  &__body
+    
+    &-row
+      background: colors.$bialy
+      
+      &:nth-of-type(even)
+        background: colors.$szary
+
+@mixin company-picker
+  background: colors.$bialy
+  border: functions.generateBorder(1, colors.$szarszy)
+  padding: 10px
+  font-family: typography.$open-sans
+  font-size: typography.$normal
+  align-items: center
+  border-radius: 10px
+  display: flex
+  width: max-content
+  column-gap: 10px
+  max-width: 100%
+  box-sizing: border-box
+
+  &__select-container
+    min-width: 180px
+
+
+@mixin expander-arrow($color1, $color2)
+  &::after
+    content: ""
+    @include mixins.square(10px)
+    transform: rotate(45deg)
+    border-bottom: functions.generateBorder(2, $color1)
+    border-right: functions.generateBorder(2, $color1)
+    margin-bottom: 5px
+
+  &--active
+
+    &::after
+      border-bottom: none
+      border-right: none
+      border-top: functions.generateBorder(2, $color2)
+      border-left: functions.generateBorder(2, $color2)
+      margin-top: 10px
+
+
+@mixin filters
+
+  &__expander
+    width: 150px
+    height: 50px
+    font-family: typography.$open-sans
+    border: functions.generateBorder(2, colors.$szarszy)
+    cursor: pointer
+    user-select: none
+    display: flex
+    align-items: center
+    justify-content: space-around
+    @include expander-arrow(colors.$szarszy, colors.$bialy)
+
+    &:hover
+      border-color: colors.$niebieski-link
+      background: colors.$niebieski-link
+      color: colors.$bialy
+
+      &::after
+        border-color: colors.$bialy
+
+    &--active
+      border-color: colors.$niebieski-link
+      background: colors.$niebieski-link
+      color: colors.$bialy
+
+    &-list
+      margin: 0
+      margin-top: 20px
+      padding: 0
+      column-gap: 10px
+      row-gap: 10px
+      list-style: none
+      display: flex
+      justify-content: center
+
+    @media (max-width: 800px)
+      width: 100%
+      justify-content: center
+      column-gap: 10px
+
+      &-list
+        flex-direction: column
+
+  &__filter
+    margin-top: 20px
+
+    &--hidden
+      display: none
+
+    &-container
+      display: flex
+      justify-content: center
+
+  &__list
+    max-height: 350px
+    overflow-y: auto
+    overflow-x: hidden
+    display: grid
+    row-gap: 20px
+    column-gap: 10px
+
+    &--countries
+      grid-auto-flow: column
+      grid-template-rows: repeat(65, max-content)
+
+      @media (max-width: 800px)
+        grid-template-rows: repeat(90, max-content)
+
+      @media (max-width: 600px)
+        grid-template-rows: repeat(130, max-content)
+
+  &__label
+    display: flex
+    align-items: center
+    gap: 5px
+
+    &-text
+      overflow-wrap: break-word
+      font-family: typography.$open-sans
+      
+      &::first-letter
+        text-transform: uppercase
+
+  &__text-input
+    width: 250px
+    
+    &-container
+      width: 100%
+      display: flex
+      justify-content: center
+      margin-bottom: 20px
+
+
+@mixin search-form
+  z-index: 2
+  background: colors.$bialy
+  padding: 20px
+  border-bottom: functions.generateBorder(1, colors.$szarszy)
+  position: relative
+
+  &__search
+    border: none
+    background: transparent
+    border-bottom: functions.generateBorder(2, colors.$szarszy)
+    max-width: 500px
+    width: 500px
+    overflow: visible
+    font-size: 1.3rem !important
+    height: 50px
+    box-sizing: border-box
+    font-family: typography.$raleway
+    outline: none
+    transition: 0.3s border-color
+
+    &:focus
+      border-color: colors.$niebieski-link
+
+    &-bar
+      display: flex
+      gap: 30px
+      justify-content: center
+
+  &__button
+    gap: 10px
+    width: 200px
+    @include button
+
+  @media (max-width: 800px)
+
+    &__search-bar
+      gap: 10px
+      flex-direction: column
+    
+    &__search, &__button
+      max-width: 100%
+      width: 100%
+
+@mixin search-content
+  display: grid
+  grid-template-columns: 120px 1fr
+  background: colors.$bialy
+  width: min(100%, 900px)
+  border-bottom: functions.generateBorder(1, colors.$szarszy)
+
+  &__content
+    font-family: typography.$open-sans
+    margin: 10px
+
+    &-middle
+      overflow-wrap: anywhere
+      margin: 10px 0
+
+    &-bottom
+      overflow-wrap: anywhere
+      font-size: typography.$small
+
+  &__image
+    object-fit: cover
+    @include mixins.square(100px)
+    margin: 10px
+    display: block
+    box-sizing: border-box
+    border-radius: 5px
+
+  &__container
+    align-items: center
+    display: flex
+    flex-direction: column
+    padding: 0 20px 70px 20px
+
+  &__title
+    font-size: typography.$large
+    font-family: typography.$raleway
+    margin: 0
+    max-width: 100%
+
+    &-link
+      overflow-wrap: anywhere
+
+  &__info
+    list-style: none
+    padding: 0
+    margin: 0
+
+  &:last-child
+    border: none
+
+@mixin profile
+  overflow-wrap: anywhere
+  display: grid
+  gap: 15px
+  grid-template-columns: 642px 287px
+
+  &__container
+    display: flex
+    justify-content: center
+    padding: 20px 0
+
+  &__label
+    display: flex
+    gap: 10px
+    font-size: typography.$normal
+
+  &__left, &__right
+    height: max-content
+    box-sizing: content-box
+    padding: 10px
+    background: colors.$bialy
+    border-radius: 10px
+    border: functions.generateBorder(1, colors.$szarszy)
+
+    &-element
+      font-family: typography.$open-sans
+      column-gap: 10px
+      grid-template-columns: 24px 1fr
+      align-items: center
+      display: grid
+      text-decoration: none
+
+      &--reverse
+        grid-template-columns: 1fr 24px
+
+  &__left
+    
+    &-top
+      display: grid
+      grid-template-columns: 200px auto
+      margin-bottom: 20px
+
+      &-text
+        margin: 0 0 20px 10px
+        display: flex
+        justify-content: center
+        flex-direction: column
+        row-gap: 10px
+
+    &-bottom
+      font-family: typography.$raleway
+
+  &__right
+    display: flex
+    font-family: typography.$open-sans
+    flex-direction: column
+    row-gap: 10px
+    height: max-content
+
+  &__image
+    @include mixins.square(100%)
+    object-fit: cover
+
+    &-container
+      overflow: hidden
+      position: relative
+      clip-path: circle(50% at 50% 50%)
+      @include mixins.square(200px)
+
+  &__title
+    display: flex
+    align-items: center
+    font-size: typography.$large
+    justify-content: space-between
+    font-family: typography.$raleway
+
+  @media (max-width: 1000px)
+    grid-template-columns: minmax(100%, 642px)
+    margin: 0 20px
+
+  @media (max-width: 700px)
+    &__title
+      justify-content: center
+
+    &__left-top
+      gap: 10px
+      grid-template-columns: auto
+
+      &-text
+        margin: 0
+      
+    &__image-container
+      justify-self: center
+
+@mixin language-form
+  column-gap: 5px
+  display: grid
+  grid-template-columns: 105px 120px 30px
+
+  &__container
+    margin-bottom: 5px
+
+  &__remove-button
+    box-sizing: content-box
+    align-self: center
+    padding: 5px
+    border-radius: 50%
+    @include mixins.square(20px)
+    border: none
+    background: colors.$szarszy
+    cursor: pointer
+
+    &:hover
+      background: colors.$crimson
+      color: colors.$bialy
+  

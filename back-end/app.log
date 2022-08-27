@@ -1,0 +1,247 @@
+{"level":30,"time":1659012759818,"pid":7100,"hostname":"pop-os","msg":"hello world"}
+{"level":50,"time":1659012826382,"pid":7221,"hostname":"pop-os","msg":"hello world"}
+{"level":30,"time":1659013302835,"pid":8239,"hostname":"pop-os","err":{"type":"Error","message":"bullshit","stack":"Error: bullshit\n    at file:///home/janmichalak/Programming/sveltekit/back-end/index.js:17:13\n    at ModuleJob.run (node:internal/modules/esm/module_job:185:25)\n    at async Promise.all (index 0)\n    at async ESMLoader.import (node:internal/modules/esm/loader:281:24)\n    at async loadESM (node:internal/process/esm_loader:88:5)\n    at async handleMainPromise (node:internal/modules/run_main:65:12)"},"msg":"bullshit"}
+{"level":50,"time":1659039595907,"pid":5132,"hostname":"pop-os","msg":"validate"}
+{"level":50,"time":1659094768521,"pid":3744,"hostname":"pop-os","name":"getPageCompany misc error","error":{"code":"ERR_HTTP_INVALID_STATUS_CODE"}}
+{"level":50,"time":1659094821735,"pid":3744,"hostname":"pop-os","name":"getPageCompany misc error","error":{"code":"ERR_HTTP_INVALID_STATUS_CODE"}}
+{"level":50,"time":1659094822025,"pid":3744,"hostname":"pop-os","name":"getPageCompany misc error","error":{"code":"ERR_HTTP_INVALID_STATUS_CODE"}}
+{"level":30,"time":1659095332037,"pid":5844,"hostname":"pop-os","msg":"1 edited the following offers: 2."}
+{"level":30,"time":1659095358601,"pid":5844,"hostname":"pop-os","msg":"1 edited the following offers: 2."}
+{"level":30,"time":1659095488772,"pid":6229,"hostname":"pop-os","msg":"1 edited the following offers: 2."}
+{"level":30,"time":1659095497034,"pid":6229,"hostname":"pop-os","msg":"1 edited the following offers: 2."}
+{"level":50,"time":1659095616634,"pid":6551,"hostname":"pop-os","msg":"validate"}
+{"level":30,"time":1659095727554,"pid":6874,"hostname":"pop-os","msg":"1 edited the following offers: 2."}
+{"level":50,"time":1659096072140,"pid":7510,"hostname":"pop-os","msg":"validate"}
+{"level":30,"time":1659101649820,"pid":5610,"hostname":"pop-os","msg":"1 edited the following offers: 2."}
+{"level":30,"time":1659101660630,"pid":5610,"hostname":"pop-os","msg":"1 edited the following offers: 2."}
+{"level":30,"time":1659101987163,"pid":6253,"hostname":"pop-os","msg":"1 edited the following offers: 2."}
+{"level":30,"time":1659102492495,"pid":6761,"hostname":"pop-os","msg":"1 edited the following offers: 2."}
+{"level":30,"time":1659102611426,"pid":7140,"hostname":"pop-os","msg":"1 edited the following offers: 2."}
+{"level":30,"time":1659102619688,"pid":7140,"hostname":"pop-os","msg":"1 removed offer of id 2."}
+{"level":30,"time":1659102825264,"pid":7513,"hostname":"pop-os","msg":"1 created new offer of id 3."}
+{"level":30,"time":1659102833270,"pid":7513,"hostname":"pop-os","msg":"1 edited the following offers: 3."}
+{"level":30,"time":1659102835302,"pid":7513,"hostname":"pop-os","msg":"1 edited the following offers: 3."}
+{"level":30,"time":1659102844280,"pid":7513,"hostname":"pop-os","msg":"1 edited the following offers: 3."}
+{"level":30,"time":1659102858055,"pid":7513,"hostname":"pop-os","msg":"1 edited the following offers: 3."}
+{"level":30,"time":1659102864473,"pid":7513,"hostname":"pop-os","msg":"1 removed offer of id 3."}
+{"level":30,"time":1659102996138,"pid":7881,"hostname":"pop-os","msg":"1 created new offer of id 4."}
+{"level":30,"time":1659103006460,"pid":7881,"hostname":"pop-os","msg":"1 removed offer of id 4."}
+{"level":30,"time":1659103492018,"pid":7881,"hostname":"pop-os","msg":"1 created new company of id 3."}
+{"level":30,"time":1659103533779,"pid":7881,"hostname":"pop-os","msg":"1 edited company of id 3."}
+{"level":30,"time":1659105903843,"pid":12582,"hostname":"pop-os","msg":"Registered iyz61194@jeoce.com."}
+{"level":30,"time":1659106850182,"pid":14084,"hostname":"pop-os","msg":"Confirmed iyz61194@jeoce.com."}
+{"level":30,"time":1659106860904,"pid":14557,"hostname":"pop-os","msg":"Confirmed iyz61194@jeoce.com."}
+{"level":30,"time":1659107132501,"pid":15252,"hostname":"pop-os","msg":"Confirmed iyz61194@jeoce.com."}
+{"level":30,"time":1659107236715,"pid":15252,"hostname":"pop-os","msg":"Confirmed iyz61194@jeoce.com."}
+{"level":30,"time":1659107237894,"pid":15252,"hostname":"pop-os","msg":"Confirmed iyz61194@jeoce.com."}
+{"level":30,"time":1659107276709,"pid":15252,"hostname":"pop-os","msg":"Registered iyz61194@jeoce.com."}
+{"level":30,"time":1659108297903,"pid":17770,"hostname":"pop-os","msg":"2 created new company of id 4."}
+{"level":30,"time":1659109710043,"pid":21747,"hostname":"pop-os","msg":"1 added administrator 2 to company of id 2."}
+{"level":30,"time":1659109717501,"pid":21747,"hostname":"pop-os","msg":"1 removed administrator 2 from company of id 2."}
+{"level":30,"time":1659109732083,"pid":21747,"hostname":"pop-os","msg":"1 added administrator 2 to company of id 2."}
+{"level":30,"time":1659109971142,"pid":22239,"hostname":"pop-os","msg":"1 removed administrator 2 from company of id 2."}
+{"level":30,"time":1659109974671,"pid":22239,"hostname":"pop-os","msg":"1 added administrator 2 to company of id 2."}
+{"level":30,"time":1659110122016,"pid":22545,"hostname":"pop-os","msg":"1 removed administrator 2 from company of id 2."}
+{"level":30,"time":1659110127134,"pid":22545,"hostname":"pop-os","msg":"1 added administrator 2 to company of id 2."}
+{"level":30,"time":1659110128964,"pid":22545,"hostname":"pop-os","msg":"1 removed administrator 2 from company of id 2."}
+{"level":30,"time":1659110138238,"pid":22545,"hostname":"pop-os","msg":"1 added administrator 2 to company of id 2."}
+{"level":30,"time":1659110140746,"pid":22545,"hostname":"pop-os","msg":"1 removed administrator 2 from company of id 2."}
+{"level":30,"time":1659110143382,"pid":22545,"hostname":"pop-os","msg":"1 added administrator 2 to company of id 2."}
+{"level":30,"time":1659110145927,"pid":22545,"hostname":"pop-os","msg":"1 removed administrator 2 from company of id 2."}
+{"level":30,"time":1659110402492,"pid":22940,"hostname":"pop-os","msg":"1 added administrator 2 to company of id 2."}
+{"level":30,"time":1659110427543,"pid":22940,"hostname":"pop-os","msg":"2 removed administrator 1 from company of id 2."}
+{"level":30,"time":1659110430091,"pid":22940,"hostname":"pop-os","msg":"2 added administrator 1 to company of id 2."}
+{"level":30,"time":1659110543737,"pid":22940,"hostname":"pop-os","msg":"1 edited company of id 2."}
+{"level":30,"time":1659110554570,"pid":22940,"hostname":"pop-os","msg":"1 edited company of id 2."}
+{"level":30,"time":1659110583848,"pid":22940,"hostname":"pop-os","msg":"1 edited company of id 2."}
+{"level":50,"time":1659110592126,"pid":22940,"hostname":"pop-os","msg":"validate"}
+{"level":30,"time":1659110823686,"pid":23834,"hostname":"pop-os","msg":"1 edited company of id 2."}
+{"level":30,"time":1659110835954,"pid":23834,"hostname":"pop-os","msg":"User 1 edited their profile."}
+{"level":30,"time":1659110912768,"pid":24130,"hostname":"pop-os","msg":"User 1 edited their profile."}
+{"level":30,"time":1659110996621,"pid":24444,"hostname":"pop-os","msg":"User 1 edited their profile."}
+{"level":30,"time":1659111019726,"pid":24444,"hostname":"pop-os","msg":"User 1 edited their profile."}
+{"level":30,"time":1659111392030,"pid":25041,"hostname":"pop-os","msg":"1 edited company of id 2."}
+{"level":30,"time":1659111434585,"pid":25041,"hostname":"pop-os","msg":"1 edited company of id 2."}
+{"level":30,"time":1659111465905,"pid":25041,"hostname":"pop-os","msg":"1 edited company of id 2."}
+{"level":30,"time":1659111468332,"pid":25041,"hostname":"pop-os","msg":"1 edited company of id 2."}
+{"level":30,"time":1659111493294,"pid":25041,"hostname":"pop-os","msg":"User 1 edited their profile."}
+{"level":30,"time":1659111498756,"pid":25041,"hostname":"pop-os","msg":"User 1 edited their profile."}
+{"level":30,"time":1659111580334,"pid":25510,"hostname":"pop-os","msg":"User 1 edited their profile."}
+{"level":30,"time":1659111800866,"pid":25510,"hostname":"pop-os","msg":"User 1 edited their profile."}
+{"level":30,"time":1659113056979,"pid":27341,"hostname":"pop-os","msg":"1 edited company of id 3."}
+{"level":30,"time":1659113057254,"pid":27341,"hostname":"pop-os","msg":"1 edited company of id 3."}
+{"level":30,"time":1659113077441,"pid":27341,"hostname":"pop-os","msg":"1 edited company of id 3."}
+{"level":30,"time":1659113121596,"pid":27341,"hostname":"pop-os","msg":"1 edited company of id 3."}
+{"level":30,"time":1659113213663,"pid":27341,"hostname":"pop-os","msg":"1 created new offer of id 5."}
+{"level":30,"time":1659113251576,"pid":27341,"hostname":"pop-os","msg":"1 removed administrator 2 from company of id 2."}
+{"level":30,"time":1659114113066,"pid":29800,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":30,"time":1659114698032,"pid":30802,"hostname":"pop-os","msg":"User 1 edited their profile."}
+{"level":30,"time":1659114704002,"pid":30802,"hostname":"pop-os","msg":"User 1 edited their profile."}
+{"level":30,"time":1659124480708,"pid":6275,"hostname":"pop-os","msg":"User 1 edited their profile."}
+{"level":30,"time":1659126570512,"pid":10879,"hostname":"pop-os","msg":"1 created new company of id 5."}
+{"level":30,"time":1659126582482,"pid":10879,"hostname":"pop-os","msg":"1 created new company of id 6."}
+{"level":30,"time":1659126588380,"pid":10879,"hostname":"pop-os","msg":"1 created new company of id 7."}
+{"level":30,"time":1659126594628,"pid":10879,"hostname":"pop-os","msg":"1 created new company of id 8."}
+{"level":30,"time":1659126602365,"pid":10879,"hostname":"pop-os","msg":"1 created new company of id 9."}
+{"level":30,"time":1659126610083,"pid":10879,"hostname":"pop-os","msg":"1 created new company of id 10."}
+{"level":30,"time":1659126618616,"pid":10879,"hostname":"pop-os","msg":"1 created new company of id 11."}
+{"level":30,"time":1659126635565,"pid":10879,"hostname":"pop-os","msg":"1 created new company of id 12."}
+{"level":30,"time":1659126643665,"pid":10879,"hostname":"pop-os","msg":"1 created new company of id 13."}
+{"level":30,"time":1659127411163,"pid":13824,"hostname":"pop-os","msg":"1 edited the following offers: 5."}
+{"level":30,"time":1659128600074,"pid":15395,"hostname":"pop-os","msg":"User 1 added offer 5 to their watchlist."}
+{"level":30,"time":1659128603973,"pid":15395,"hostname":"pop-os","msg":"User 1 added offer 5 to their watchlist."}
+{"level":30,"time":1659128648388,"pid":15395,"hostname":"pop-os","msg":"1 edited offer of id 5."}
+{"level":30,"time":1659129850881,"pid":17900,"hostname":"pop-os","msg":"1 created new offer of id 6."}
+{"level":30,"time":1659129853336,"pid":17900,"hostname":"pop-os","msg":"User 1 added offer 6 to their watchlist."}
+{"level":30,"time":1659131583114,"pid":17900,"hostname":"pop-os","msg":"User 1 changed their password."}
+{"level":30,"time":1659131601055,"pid":17900,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":30,"time":1659132068316,"pid":20523,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":30,"time":1659132125906,"pid":20712,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":30,"time":1659132127989,"pid":20712,"hostname":"pop-os","msg":"Removed session of 1"}
+{"level":30,"time":1659132575353,"pid":20712,"hostname":"pop-os","msg":"Sent password reset email to janek.bananek371@gmail.com."}
+{"level":30,"time":1659132658411,"pid":20712,"hostname":"pop-os","msg":"Reseted password of 1"}
+{"level":50,"time":1659132738023,"pid":20712,"hostname":"pop-os","msg":"validate"}
+{"level":50,"time":1659132744322,"pid":20712,"hostname":"pop-os","msg":"validate"}
+{"level":50,"time":1659132774437,"pid":20712,"hostname":"pop-os","msg":"validate"}
+{"level":50,"time":1659132900254,"pid":20712,"hostname":"pop-os","msg":"validate"}
+{"level":50,"time":1659132917474,"pid":20712,"hostname":"pop-os","msg":"validate"}
+{"level":30,"time":1659133339041,"pid":22572,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":50,"time":1659133350627,"pid":22572,"hostname":"pop-os","msg":"validate"}
+{"level":30,"time":1659133895612,"pid":23458,"hostname":"pop-os","msg":"1 removed company of id 3."}
+{"level":30,"time":1659134213944,"pid":23939,"hostname":"pop-os","msg":"1 removed company of id 5."}
+{"level":30,"time":1659134532083,"pid":23939,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":30,"time":1659134550882,"pid":23939,"hostname":"pop-os","msg":"User 1 changed their password."}
+{"level":30,"time":1659134612840,"pid":23939,"hostname":"pop-os","msg":"Sent password reset email to janek.bananek371@gmail.com."}
+{"level":30,"time":1659134663488,"pid":23939,"hostname":"pop-os","msg":"Removed session of 2"}
+{"level":30,"time":1659134672877,"pid":23939,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":30,"time":1659134682076,"pid":23939,"hostname":"pop-os","msg":"Reseted password of 1"}
+{"level":30,"time":1659179917194,"pid":14436,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":30,"time":1659180028940,"pid":14436,"hostname":"pop-os","msg":"Removed session of 1"}
+{"level":30,"time":1659258712315,"pid":6108,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":30,"time":1659263214628,"pid":10505,"hostname":"pop-os","msg":"1 created new company of id 14."}
+{"level":30,"time":1659263221913,"pid":10505,"hostname":"pop-os","msg":"1 created new company of id 15."}
+{"level":30,"time":1659263282575,"pid":10505,"hostname":"pop-os","msg":"1 created new company of id 16."}
+{"level":30,"time":1659270456001,"pid":4824,"hostname":"pop-os","msg":"1 created new company of id 17."}
+{"level":30,"time":1659270871386,"pid":5376,"hostname":"pop-os","msg":"Registered fdsdf@int.pl."}
+{"level":30,"time":1659276407926,"pid":12232,"hostname":"pop-os","msg":"1 edited the following offers: 5."}
+{"level":30,"time":1659296011176,"pid":4759,"hostname":"pop-os","msg":"1 edited offer of id 5."}
+{"level":30,"time":1659355237933,"pid":7271,"hostname":"pop-os","msg":"1 edited offer of id 5."}
+{"level":30,"time":1659374068264,"pid":8560,"hostname":"pop-os","msg":"1 edited company of id 2."}
+{"level":30,"time":1659375445143,"pid":10002,"hostname":"pop-os","msg":"1 added administrator 3 to company of id 2."}
+{"level":30,"time":1659375654407,"pid":10419,"hostname":"pop-os","msg":"Removed session of 1"}
+{"level":30,"time":1659375689015,"pid":10419,"hostname":"pop-os","msg":"Registered tuw26046@cdfaq.com."}
+{"level":30,"time":1659375693719,"pid":10419,"hostname":"pop-os","msg":"Resent verification email to tuw26046@cdfaq.com."}
+{"level":30,"time":1659375748368,"pid":10419,"hostname":"pop-os","msg":"Confirmed tuw26046@cdfaq.com."}
+{"level":30,"time":1659375753888,"pid":10419,"hostname":"pop-os","msg":"Registered tuw26046@cdfaq.com."}
+{"level":30,"time":1659375775590,"pid":10419,"hostname":"pop-os","msg":"Removed session of 4"}
+{"level":30,"time":1659375804242,"pid":10419,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":30,"time":1659375990392,"pid":10419,"hostname":"pop-os","msg":"Registered f@int.pl."}
+{"level":30,"time":1659376014190,"pid":10419,"hostname":"pop-os","msg":"Registered fdsf@int.ll."}
+{"level":30,"time":1659376033624,"pid":10419,"hostname":"pop-os","msg":"Registered fd@int.pl."}
+{"level":30,"time":1659376052842,"pid":10419,"hostname":"pop-os","msg":"Registered fsda@int.pl."}
+{"level":30,"time":1659376077507,"pid":10419,"hostname":"pop-os","msg":"Registered fsd@in.tpl."}
+{"level":30,"time":1659376089859,"pid":10419,"hostname":"pop-os","msg":"Registered fsdf@int.pl."}
+{"level":30,"time":1659376119926,"pid":10419,"hostname":"pop-os","msg":"Registered fsfdf@int.pl."}
+{"level":30,"time":1659376146472,"pid":10419,"hostname":"pop-os","msg":"Registered e@e.pl."}
+{"level":30,"time":1659376155826,"pid":10419,"hostname":"pop-os","msg":"1 removed administrator 3 from company of id 2."}
+{"level":30,"time":1659378053635,"pid":14603,"hostname":"pop-os","msg":"1 added administrator 2 to company of id 2."}
+{"level":30,"time":1659378055225,"pid":14603,"hostname":"pop-os","msg":"1 removed administrator 2 from company of id 2."}
+{"level":30,"time":1659378060766,"pid":14603,"hostname":"pop-os","msg":"1 added administrator 4 to company of id 2."}
+{"level":30,"time":1659378063202,"pid":14603,"hostname":"pop-os","msg":"1 added administrator 7 to company of id 2."}
+{"level":30,"time":1659378063784,"pid":14603,"hostname":"pop-os","msg":"1 added administrator 6 to company of id 2."}
+{"level":30,"time":1659378064453,"pid":14603,"hostname":"pop-os","msg":"1 added administrator 9 to company of id 2."}
+{"level":30,"time":1659378064849,"pid":14603,"hostname":"pop-os","msg":"1 added administrator 8 to company of id 2."}
+{"level":30,"time":1659378078899,"pid":14603,"hostname":"pop-os","msg":"1 removed administrator 4 from company of id 2."}
+{"level":30,"time":1659378079468,"pid":14603,"hostname":"pop-os","msg":"1 removed administrator 7 from company of id 2."}
+{"level":30,"time":1659378079878,"pid":14603,"hostname":"pop-os","msg":"1 removed administrator 6 from company of id 2."}
+{"level":30,"time":1659378080339,"pid":14603,"hostname":"pop-os","msg":"1 removed administrator 9 from company of id 2."}
+{"level":30,"time":1659378080833,"pid":14603,"hostname":"pop-os","msg":"1 removed administrator 8 from company of id 2."}
+{"level":30,"time":1659378091351,"pid":14603,"hostname":"pop-os","msg":"1 added administrator 2 to company of id 2."}
+{"level":30,"time":1659378093086,"pid":14603,"hostname":"pop-os","msg":"1 added administrator 3 to company of id 2."}
+{"level":30,"time":1659378164692,"pid":14603,"hostname":"pop-os","msg":"1 added administrator 5 to company of id 2."}
+{"level":30,"time":1659378165298,"pid":14603,"hostname":"pop-os","msg":"1 added administrator 6 to company of id 2."}
+{"level":30,"time":1659378165739,"pid":14603,"hostname":"pop-os","msg":"1 added administrator 4 to company of id 2."}
+{"level":30,"time":1659378166299,"pid":14603,"hostname":"pop-os","msg":"1 added administrator 8 to company of id 2."}
+{"level":30,"time":1659600534554,"pid":5427,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":30,"time":1659608299419,"pid":10180,"hostname":"pop-os","msg":"User 1 edited their profile."}
+{"level":50,"time":1659820573665,"pid":14495,"hostname":"pop-os","name":"getCompany","error":{"clientVersion":"3.15.1"}}
+{"level":50,"time":1659820755626,"pid":14495,"hostname":"pop-os","name":"getCompany","error":{"clientVersion":"3.15.1"}}
+{"level":50,"time":1659820759603,"pid":14873,"hostname":"pop-os","name":"getCompany","error":{"clientVersion":"3.15.1"}}
+{"level":50,"time":1659820777164,"pid":14873,"hostname":"pop-os","name":"getCompany","error":{"clientVersion":"3.15.1"}}
+{"level":50,"time":1659821024391,"pid":14873,"hostname":"pop-os","name":"getCompany","error":{"clientVersion":"3.15.1"}}
+{"level":30,"time":1659821405187,"pid":16368,"hostname":"pop-os","msg":"Registered janmichalak@int.pl."}
+{"level":30,"time":1659821494977,"pid":16368,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":30,"time":1659821536483,"pid":16368,"hostname":"pop-os","msg":"Confirmed janek.bananek371@gmail.com."}
+{"level":30,"time":1659821542941,"pid":16368,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":50,"time":1659821554601,"pid":16368,"hostname":"pop-os","name":"createCompany","error":{"clientVersion":"3.15.1"},"sessionID":2,"data":{"industry":"gastronomio","name":"fekejo","country":"Alĝerio","email":"janmichalak@int.pl","address":"ul. Morelowa 5"}}
+{"level":30,"time":1659821704371,"pid":17048,"hostname":"pop-os","msg":"2 created new company of id 1."}
+{"level":50,"time":1659821706027,"pid":17048,"hostname":"pop-os","name":"getCompany","error":{}}
+{"level":50,"time":1659821796543,"pid":17292,"hostname":"pop-os","name":"getCompany","error":{}}
+{"level":50,"time":1659821806710,"pid":17292,"hostname":"pop-os","name":"getCompany","error":{}}
+{"level":50,"time":1659821829361,"pid":17419,"hostname":"pop-os","name":"getCompany","error":{}}
+{"level":30,"time":1659822272538,"pid":18396,"hostname":"pop-os","msg":"2 added administrator 1 to company of id 1."}
+{"level":30,"time":1659822325776,"pid":18396,"hostname":"pop-os","msg":"Confirmed janmichalak@int.pl."}
+{"level":30,"time":1659822336815,"pid":18396,"hostname":"pop-os","msg":"Registered janmichalak@int.pl."}
+{"level":30,"time":1659822701304,"pid":19445,"hostname":"pop-os","msg":"Registered zjlmnigapjdxeoqdlc@kvhrw.com."}
+{"level":30,"time":1659822732386,"pid":19445,"hostname":"pop-os","msg":"Confirmed zjlmnigapjdxeoqdlc@kvhrw.com."}
+{"level":30,"time":1659822737128,"pid":19445,"hostname":"pop-os","msg":"Registered zjlmnigapjdxeoqdlc@kvhrw.com."}
+{"level":30,"time":1659822769141,"pid":19445,"hostname":"pop-os","msg":"1 edited company of id 1."}
+{"level":30,"time":1659824141543,"pid":22293,"hostname":"pop-os","msg":"2 created new company of id 2."}
+{"level":30,"time":1659870745711,"pid":9105,"hostname":"pop-os","msg":"2 changed owner of company 1 to 1"}
+{"level":30,"time":1659871002621,"pid":9696,"hostname":"pop-os","msg":"Registered janmichalak@int.pl."}
+{"level":30,"time":1659879970391,"pid":12645,"hostname":"pop-os","msg":"2 created new offer of id 1."}
+{"level":30,"time":1659985630935,"pid":10988,"hostname":"pop-os","msg":"2 edited the following offers: 1."}
+{"level":30,"time":1659985633547,"pid":10988,"hostname":"pop-os","msg":"User 2 added offer 1 to their watchlist."}
+{"level":30,"time":1659985793483,"pid":10988,"hostname":"pop-os","msg":"User 2 edited their profile."}
+{"level":30,"time":1659986348095,"pid":10988,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":30,"time":1659988778679,"pid":14489,"hostname":"pop-os","msg":"2 created new offer of id 2."}
+{"level":30,"time":1659988780409,"pid":14489,"hostname":"pop-os","msg":"User 2 added offer 2 to their watchlist."}
+{"level":30,"time":1659991264555,"pid":22406,"hostname":"pop-os","msg":"2 edited the following offers: 2."}
+{"level":30,"time":1660498624835,"pid":7528,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":30,"time":1660498645522,"pid":7528,"hostname":"pop-os","msg":"2 edited the following offers: 2."}
+{"level":30,"time":1660499689354,"pid":11246,"hostname":"pop-os","msg":"User 2 added offer 2 to their watchlist."}
+{"level":30,"time":1660501800260,"pid":17013,"hostname":"pop-os","msg":"2 edited the following offers: 1."}
+{"level":30,"time":1660566280664,"pid":6247,"hostname":"pop-os","msg":"2 added administrator 3 to company of id 2."}
+{"level":30,"time":1660569526873,"pid":11299,"hostname":"pop-os","msg":"User 2 edited their profile."}
+{"level":30,"time":1660569660803,"pid":11812,"hostname":"pop-os","msg":"User 2 edited their profile."}
+{"level":30,"time":1660569664048,"pid":11812,"hostname":"pop-os","msg":"User 2 edited their profile."}
+{"level":30,"time":1660569670615,"pid":11812,"hostname":"pop-os","msg":"User 2 edited their profile."}
+{"level":50,"time":1660570784487,"pid":12887,"hostname":"pop-os","msg":"validate"}
+{"level":50,"time":1660570916376,"pid":13284,"hostname":"pop-os","msg":"validate"}
+{"level":50,"time":1660570923661,"pid":13284,"hostname":"pop-os","msg":"validate"}
+{"level":50,"time":1660570958072,"pid":13490,"hostname":"pop-os","msg":"validate"}
+{"level":50,"time":1660574180218,"pid":18931,"hostname":"pop-os","name":"confirmEmail misc error","error":{}}
+{"level":50,"time":1660574237657,"pid":19143,"hostname":"pop-os","name":"confirmEmail misc error","error":{}}
+{"level":50,"time":1660574313122,"pid":19422,"hostname":"pop-os","name":"confirmEmail misc error","error":{}}
+{"level":30,"time":1660574331152,"pid":19573,"hostname":"pop-os","msg":"Confirmed janek.bananek371@gmail.com."}
+{"level":30,"time":1660574559411,"pid":19573,"hostname":"pop-os","msg":"User 2 edited their profile."}
+{"level":30,"time":1660574561987,"pid":19573,"hostname":"pop-os","msg":"User 2 edited their profile."}
+{"level":30,"time":1660574596141,"pid":19910,"hostname":"pop-os","msg":"Confirmed janek.bananek371@gmail.com."}
+{"level":30,"time":1660574615126,"pid":19910,"hostname":"pop-os","msg":"User 2 edited their profile."}
+{"level":30,"time":1660574617757,"pid":19910,"hostname":"pop-os","msg":"User 2 edited their profile."}
+{"level":30,"time":1660574647881,"pid":20243,"hostname":"pop-os","msg":"Confirmed janek.bananek371@gmail.com."}
+{"level":30,"time":1660574661076,"pid":20243,"hostname":"pop-os","msg":"Confirmed janek.bananek371@gmail.com."}
+{"level":30,"time":1660834049016,"pid":7651,"hostname":"pop-os","msg":"Removed session of 2"}
+{"level":30,"time":1660834488703,"pid":7651,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":30,"time":1660835533844,"pid":7651,"hostname":"pop-os","msg":"Removed session of 2"}
+{"level":30,"time":1661070890643,"pid":6364,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":30,"time":1661083987650,"pid":22094,"hostname":"pop-os","msg":"User 2 edited their profile."}
+{"level":30,"time":1661084145398,"pid":22604,"hostname":"pop-os","msg":"User 2 edited their profile."}
+{"level":30,"time":1661084195378,"pid":22604,"hostname":"pop-os","msg":"User 2 edited their profile."}
+{"level":30,"time":1661084422021,"pid":23195,"hostname":"pop-os","msg":"User 2 edited their profile."}
+{"level":30,"time":1661084781181,"pid":24076,"hostname":"pop-os","msg":"User 2 edited their profile."}
+{"level":30,"time":1661085180643,"pid":25091,"hostname":"pop-os","msg":"User 2 edited their profile."}
+{"level":30,"time":1661085357186,"pid":25496,"hostname":"pop-os","msg":"User 2 edited their profile."}
+{"level":30,"time":1661085422677,"pid":25822,"hostname":"pop-os","msg":"User 2 edited their profile."}
+{"level":30,"time":1661085462221,"pid":25822,"hostname":"pop-os","msg":"User 2 edited their profile."}
+{"level":30,"time":1661086640440,"pid":27293,"hostname":"pop-os","msg":"User 2 edited their profile."}
+{"level":30,"time":1661108635060,"pid":6541,"hostname":"pop-os","msg":"Removed session of 2"}
+{"level":50,"time":1661627216264,"pid":8940,"hostname":"pop-os","name":"confirmEmail verificationError","error":{"name":"JsonWebTokenError","message":"jwt malformed"}}
+{"level":30,"time":1661627274029,"pid":9045,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":30,"time":1661628158263,"pid":10850,"hostname":"pop-os","msg":"Removed session of 2"}
+{"level":50,"time":1661628183873,"pid":10850,"hostname":"pop-os","name":"confirmEmail verificationError","error":{"clientVersion":"3.15.1"}}
+{"level":50,"time":1661628183873,"pid":10850,"hostname":"pop-os","name":"register misc error","error":{"clientVersion":"3.15.1"},"email":"janek.bananek371@gmail.com"}
+{"level":50,"time":1661628270438,"pid":11046,"hostname":"pop-os","name":"confirmEmail verificationError","error":{"clientVersion":"3.15.1"}}
+{"level":50,"time":1661628270438,"pid":11046,"hostname":"pop-os","name":"register misc error","error":{"clientVersion":"3.15.1"},"email":"janek.bananek371@gmail.com"}
+{"level":50,"time":1661628518441,"pid":11619,"hostname":"pop-os","name":"confirmEmail verificationError","error":{}}
+{"level":50,"time":1661628518441,"pid":11619,"hostname":"pop-os","name":"register misc error","error":{"clientVersion":"3.15.1"},"email":"janek.bananek371@gmail.com"}
