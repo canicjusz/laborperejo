@@ -1,6 +1,7 @@
 import { get } from 'svelte/store';
 import { error } from './stores';
 import { getStores } from '$app/stores';
+import { variables } from '$lib/variables';
 
 const extractErrors = (err) => {
 	return err.inner.reduce((acc, err) => ({ ...acc, [err.path]: err.message }), {});
@@ -93,7 +94,7 @@ const changeObservationCreator = () => {
 		let watchlist = get(session).watchlist;
 		const isWatched = watchlist.some((offer) => offer.ID === ID);
 		if (isWatched) {
-			deleteData(`http://localhost:5000/api/offers/${ID}/follow`, true)
+			deleteData(variables.base + `/api/offers/${ID}/follow`, true)
 				.then(() => {
 					const offerIndex = watchlist.findIndex((offer) => offer.ID === ID);
 					watchlist.splice(offerIndex, 1);
@@ -104,7 +105,7 @@ const changeObservationCreator = () => {
 				})
 				.catch(error.change);
 		} else {
-			postData(`http://localhost:5000/api/offers/${ID}/follow`, {}, true)
+			postData(variables.base + `/api/offers/${ID}/follow`, {}, true)
 				.then(() => {
 					watchlist.push({
 						ID,

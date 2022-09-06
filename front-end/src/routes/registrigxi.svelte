@@ -11,6 +11,7 @@
 </script>
 
 <script>
+	import { variables } from '$lib/variables';
 	import * as yup from 'yup';
 	import Select from 'svelte-select';
 	import countries from '../../../countries';
@@ -43,7 +44,7 @@
 			.required('Bonvolu entajpi vian pasvorton.')
 			.matches(
 				/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])[\w#?!@$%^&*ĤŜĜĈĴŬĥŝĝĉĵŭ-]{8,512}$/,
-				'La pasvorto enhavu almenaŭ 8 signojn kaj po almenaŭ unu ciferon, ĉefliteron kaj malĉefliteron. Oni povas aldone uzi jenajn specjalajn signojn: #?!@$%^&*-_'
+				'La pasvorto enhavu 8-512 signojn kaj po almenaŭ unu ciferon, ĉefliteron kaj malĉefliteron. Oni povas aldone uzi jenajn specjalajn signojn: #?!@$%^&*-_'
 			),
 		retypedPassword: yup
 			.mixed()
@@ -91,7 +92,7 @@
 	const sendForm = (data) => {
 		sending = true;
 		const { retypedPassword, ...valuesToSend } = data;
-		postData('http://localhost:5000/api/profiles', JSON.stringify(valuesToSend), true, {
+		postData(variables.base + '/api/profiles', JSON.stringify(valuesToSend), true, {
 			'Content-type': 'application/json'
 		})
 			.then(() => {
@@ -125,7 +126,7 @@
 	const resendConfirmation = () => {
 		const valuesToSend = { email: values.email };
 
-		postData('http://localhost:5000/api/account/confirmation', JSON.stringify(valuesToSend), true, {
+		postData(variables.base + '/api/account/confirmation', JSON.stringify(valuesToSend), true, {
 			'Content-type': 'application/json'
 		})
 			.then(feedback.change)

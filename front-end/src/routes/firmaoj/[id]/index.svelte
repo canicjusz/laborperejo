@@ -1,4 +1,5 @@
 <script>
+	import { variables } from '$lib/variables';
 	import Spinner from '$lib/Spinner.svelte';
 	import { getDate, getData } from '$lib/utils';
 	export let company, offers, pages, id;
@@ -10,7 +11,7 @@
 
 	const loadOffers = () => {
 		isLoading = true;
-		getData(`http://localhost:5000/api/offers?de=${id}&p=${++p}`).then((res) => {
+		getData(variables.base + `/api/offers?de=${id}&p=${++p}`).then((res) => {
 			const { offers: newOffers } = res;
 			offers = offers.concat(newOffers);
 			isLoading = false;

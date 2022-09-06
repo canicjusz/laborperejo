@@ -18,7 +18,7 @@ import prismaPkg from "@prisma/client";
 import logger from "../../../logger.js";
 const { Prisma } = prismaPkg;
 import transporter from "../../nodemailer.js";
-const ourEmail = '"Jan Michalak" <laborperejo@zohomail.eu>';
+const ourEmail = '"Jan Michalak" <oficejo@laborperejo.com>';
 const host = process.env.HEROKU
   ? "laborperejo.herokuapp.com"
   : "localhost:5000";
@@ -316,6 +316,7 @@ const register = async (req, res) => {
     logger.info(`Registered ${email}.`);
     res.json({ content: "Vi registriĝis" });
   } catch (e) {
+    console.log(e);
     logger.error({
       name: "register misc error",
       error: e,

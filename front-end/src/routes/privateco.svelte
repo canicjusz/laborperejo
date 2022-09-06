@@ -44,41 +44,23 @@
 </div>
 
 <style lang="sass">
-  @use '../styles/abstracts/typography'
-  @use '../styles/abstracts/colors'
-  @use '../styles/abstracts/functions'
-  
-  .privacy
-    font-family: typography.$open-sans
-    border: functions.generateBorder(1, colors.$najszarszy)
-    padding: 10px
-    width: min(100%, 1000px)
-    border-radius: 10px
-    background: colors.$bialy
-  
-    &__paragraph
-      margin: 10px 0 0 0
-  
-    &__container
-      margin: 20px
-      display: flex
-      justify-content: center
+@use '../styles/abstracts/typography'
+@use '../styles/components'
 
-    &__section-title, &__sub-section-title, &__title
-      font-family: typography.$raleway
+.privacy
+	@include components.info-page
 
-    &__section-title, &__sub-section-title
-      margin: 15px 0
-  
-    &__title
-      text-align: center
-      font-size: typography.$large
+	&__section-title, &__sub-section-title
+		font-family: typography.$raleway
 
-    &__section-title
-      font-size: typography.$middle
+	&__section-title, &__sub-section-title
+		margin: 15px 0
 
-    &__sub-section-title
-      font-size: typography.$normal
+	&__section-title
+		font-size: typography.$middle
+
+	&__sub-section-title
+		font-size: typography.$normal
 
 
 </style>

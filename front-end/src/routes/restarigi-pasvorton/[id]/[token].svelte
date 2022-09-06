@@ -16,6 +16,7 @@
 </script>
 
 <script>
+	import { variables } from '$lib/variables';
 	import { goto } from '$app/navigation';
 	import { error, feedback } from '$lib/stores';
 	import * as yup from 'yup';
@@ -39,7 +40,7 @@
 			.required('Bonvolu entajpi novan pasvorton.')
 			.matches(
 				/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])[\w#?!@$%^&*ĤŜĜĈĴŬĥŝĝĉĵŭ-]{8,512}$/,
-				'La pasvorto enhavu almenaŭ 8 signojn kaj po almenaŭ unu ciferon, ĉefliteron kaj malĉefliteron. Oni povas aldone uzi jenajn specjalajn signojn: #?!@$%^&*-_'
+				'La pasvorto enhavu 8-512 signojn kaj po almenaŭ unu ciferon, ĉefliteron kaj malĉefliteron. Oni povas aldone uzi jenajn specjalajn signojn: #?!@$%^&*-_'
 			),
 		retypedPassword: yup
 			.mixed()
@@ -56,7 +57,7 @@
 			id,
 			token
 		};
-		putData(`http://localhost:5000/api/account/password`, JSON.stringify(valuesToSend), true, {
+		putData(variables.base + `/api/account/password`, JSON.stringify(valuesToSend), true, {
 			'Content-type': 'application/json'
 		})
 			.then((res) => {

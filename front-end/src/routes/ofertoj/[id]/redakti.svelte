@@ -15,6 +15,7 @@
 </script>
 
 <script>
+	import { variables } from '$lib/variables';
 	import { goto, beforeNavigate } from '$app/navigation';
 	import countries from '../../../../../countries';
 	import categories from '../../../../../categories';
@@ -104,7 +105,7 @@
 		sending = true;
 		values.close_at = new Date(values.close_at);
 		values.offerID = id;
-		putData(`http://localhost:5000/api/offers/${id}`, JSON.stringify(values), true, {
+		putData(variables.base + `/api/offers/${id}`, JSON.stringify(values), true, {
 			'Content-type': 'application/json'
 		})
 			.then((res) => {

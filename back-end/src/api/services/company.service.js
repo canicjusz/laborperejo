@@ -162,6 +162,16 @@ const changeOwnerByID = async (companyID, userID) =>
     data: { owner: userID },
   });
 
+const getNameByID = async (id) =>
+  await prisma.company.findFirst({
+    where: {
+      ID: id,
+    },
+    select: {
+      name: true,
+    },
+  });
+
 export {
   createByID,
   removeByID,
@@ -174,4 +184,5 @@ export {
   addAdministratorByID,
   getOwnerByID,
   changeOwnerByID,
+  getNameByID,
 };

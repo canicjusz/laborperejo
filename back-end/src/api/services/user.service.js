@@ -153,6 +153,16 @@ const unsubscribeByEmail = async (email) =>
     },
   });
 
+const getNameByID = async (id) =>
+  await prisma.user.findFirst({
+    where: {
+      ID: id,
+    },
+    select: {
+      name: true,
+    },
+  });
+
 export {
   createTemplate,
   getBanAndConfirmed,
@@ -165,6 +175,7 @@ export {
   getCompaniesOfID,
   countFollowed,
   unsubscribeByEmail,
+  getNameByID,
   // addToWatchlistByID,
   // removeFromWatchlistByID,
 };

@@ -24,7 +24,7 @@ const getDate = (string) => {
   return `la ${day}-an de ${months[monthIndex]} ${year}`;
 };
 
-const ourEmail = '"Jan Michalak" <laborperejo@zohomail.eu>';
+const ourEmail = '"Jan Michalak" <oficejo@laborperejo.com>';
 const host = process.env.HEROKU
   ? "laborperejo.herokuapp.com"
   : "localhost:5000";

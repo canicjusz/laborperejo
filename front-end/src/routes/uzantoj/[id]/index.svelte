@@ -60,8 +60,10 @@
 								></a
 							>
 						</span>
-						<div class="profile__resume-file">
-							<PdfViewer url={user.profile.resume} />
+						<div class="profile__resume-pages">
+							<div class="profile__resume-viewer">
+								<PdfViewer url={user.profile.resume} />
+							</div>
 						</div>
 					</div>
 				{/if}
@@ -210,6 +212,19 @@
 		grid-area: right
 
 	&__resume
+
+		&-pages
+			border-top-left-radius: 10px
+			border-bottom-right-radius: 10px
+			border-bottom-left-radius: 10px
+			position: relative
+			background: colors.$szary
+			overflow: visible
+
+		&-viewer
+			padding: 10px
+			text-align: center
+			overflow-y: auto
 
 		&-text
 			margin: 10px 0

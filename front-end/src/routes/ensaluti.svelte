@@ -18,6 +18,7 @@
 	import { extractErrors, postData } from '$lib/utils';
 	import PasswordInput from '$lib/PasswordInput.svelte';
 	import Error from '$lib/Error.svelte';
+	import { variables } from '$lib/variables';
 
 	const values = {
 		email: '',
@@ -40,7 +41,7 @@
 
 	const sendForm = () => {
 		sending = true;
-		postData('http://localhost:5000/api/session', JSON.stringify(values), true, {
+		postData(variables.base + '/api/session', JSON.stringify(values), true, {
 			'Content-type': 'application/json'
 		})
 			.then((databaseUser) => {

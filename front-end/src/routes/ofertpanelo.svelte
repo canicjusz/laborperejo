@@ -10,6 +10,7 @@
 </script>
 
 <script>
+	import { variables } from '$lib/variables';
 	import Select from 'svelte-select';
 	import { goto, beforeNavigate } from '$app/navigation';
 	import { session } from '$app/stores';
@@ -58,7 +59,7 @@
 
 	const loadOffers = async () => {
 		loading = true;
-		await getData(`http://localhost:5000/api/offers?de=${companyID}&p=${++p}&nm=0`)
+		await getData(variables.base + `/api/offers?de=${companyID}&p=${++p}&nm=0`)
 			.then((res) => {
 				loading = false;
 				const { offers: newOffers, pages } = res;
@@ -88,7 +89,7 @@
 			(offers[i].close_at !== originalData[i].close_at && offers[i].closed === false));
 
 	const removeOffer = () => {
-		deleteData(`http://localhost:5000/api/offers/${toRemove.id}`, true).then((res) => {
+		deleteData(variables.base + `/api/offers/${toRemove.id}`, true).then((res) => {
 			offers.splice(toRemove.index, 1);
 			originalData.splice(toRemove.index, 1);
 			offersChanged.splice(toRemove.index, 1);
@@ -111,7 +112,7 @@
 			}
 		});
 		const valuesToSend = { array: changes, companyID };
-		putData(`http://localhost:5000/api/offers`, JSON.stringify(valuesToSend), true, {
+		putData(variables.base + `/api/offers`, JSON.stringify(valuesToSend), true, {
 			'Content-type': 'application/json'
 		})
 			.then((res) => {

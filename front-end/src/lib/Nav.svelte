@@ -3,6 +3,7 @@
 	import { getDate, changeObservationCreator, deleteData } from '$lib/utils';
 	import { navigating, session } from '$app/stores';
 	import { goto } from '$app/navigation';
+	import { variables } from '$lib/variables';
 
 	const changeObservation = changeObservationCreator();
 
@@ -35,7 +36,7 @@
 		}
 	};
 	const deleteSession = () =>
-		deleteData('http://localhost:5000/api/session', true)
+		deleteData(variables.base + '/api/session', true)
 			.then((res) => {
 				goto('/');
 				session.set(null);
@@ -578,7 +579,7 @@
 	&--clicked .hamburger__bun
 		transform: translateX(51px)
 
-@media (max-width: 800px)
+@media (max-width: 950px)
 	.navbar
 
 		&__inner-container

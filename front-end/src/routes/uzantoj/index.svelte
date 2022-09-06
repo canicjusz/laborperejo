@@ -10,6 +10,7 @@
 </script>
 
 <script>
+	import { variables } from '$lib/variables';
 	import UserSearch from '$lib/UserSearch.svelte';
 	import { goto, afterNavigate } from '$app/navigation';
 	import { getDate, getData, generateNavigation } from '$lib/utils';
@@ -46,7 +47,7 @@
 	};
 
 	const downloadData = async () => {
-		await getData('http://localhost:5000/api/profiles' + search)
+		await getData(variables.base + '/api/profiles' + search)
 			.then((data) => {
 				pages = data.pages;
 				profiles = data.profiles;

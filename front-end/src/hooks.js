@@ -1,7 +1,8 @@
 import { getData } from '$lib/utils';
+import { variables } from '$lib/variables';
 
 export async function handle({ event, resolve }) {
-	event.locals.user = await getData(`http://localhost:5000/api/profiles/mine`, true, {
+	event.locals.user = await getData(variables.base + `/api/profiles/mine`, true, {
 		cookie: event.request.headers.get('cookie')
 	});
 	const response = await resolve(event);

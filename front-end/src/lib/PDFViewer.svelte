@@ -65,8 +65,6 @@
 
 #canvasContainer
 	padding: 10px
-	background: colors.$szarszy
-	border-radius: 50%
 	text-align: center
 	max-height: 70vh
 	overflow-y: auto

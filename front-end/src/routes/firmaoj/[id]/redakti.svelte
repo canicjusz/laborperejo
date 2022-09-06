@@ -15,6 +15,7 @@
 </script>
 
 <script>
+	import { variables } from '$lib/variables';
 	import { goto, beforeNavigate } from '$app/navigation';
 	import { error, feedback } from '$lib/stores';
 	import { session } from '$app/stores';
@@ -129,7 +130,7 @@
 			data.append('logo', newImg);
 			values.logo = logoSrc;
 		}
-		putData(`http://localhost:5000/api/companies/${id}`, data, true)
+		putData(variables.base + `/api/companies/${id}`, data, true)
 			.then((res) => {
 				sending = false;
 				feedback.change(res);
@@ -157,7 +158,7 @@
 	};
 
 	const removeAdministrator = (userID, userIndex) => {
-		deleteData(`http://localhost:5000/api/companies/${id}/administrator/${userID}`, true)
+		deleteData(variables.base + `/api/companies/${id}/administrator/${userID}`, true)
 			.then((res) => {
 				searched = false;
 				feedback.change(res);
@@ -168,7 +169,7 @@
 	};
 
 	const addAdministrator = (userID, userIndex) => {
-		postData(`http://localhost:5000/api/companies/${id}/administrator/${userID}`, {}, true)
+		postData(variables.base + `/api/companies/${id}/administrator/${userID}`, {}, true)
 			.then((res) => {
 				searched = false;
 				feedback.change(res);
@@ -203,7 +204,7 @@
 
 	const changeOwner = () => {
 		showPopup = false;
-		putData(`http://localhost:5000/api/companies/${id}/owner/${newOwner.id}`, {}, true)
+		putData(variables.base + `/api/companies/${id}/owner/${newOwner.id}`, {}, true)
 			.then((res) => {
 				feedback.change(res);
 				isOwner = false;
@@ -225,9 +226,7 @@
 			currentPage = 1;
 			searchedAdministrators = [];
 		}
-		getData(
-			'http://localhost:5000/api/profiles?p=' + currentPage + '&na=' + id + '&q=' + searchQuery
-		)
+		getData(variables.base + '/api/profiles?p=' + currentPage + '&na=' + id + '&q=' + searchQuery)
 			.then((res) => {
 				loadingAdmins = false;
 				const { profiles, pages } = res;

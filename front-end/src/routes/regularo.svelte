@@ -47,29 +47,8 @@
 </div>
 
 <style lang="sass">
-@use '../styles/abstracts/typography'
-@use '../styles/abstracts/colors'
-@use '../styles/abstracts/functions'
+@use '../styles/components'
 
 .rules
-  font-family: typography.$open-sans
-  border: functions.generateBorder(1, colors.$najszarszy)
-  padding: 10px
-  width: min(100%, 1000px)
-  border-radius: 10px
-  background: colors.$bialy
-
-  &__paragraph
-    margin: 0
-
-  &__container
-    margin: 20px
-    display: flex
-    justify-content: center
-
-  &__title
-    text-align: center
-    font-size: typography.$large
-    font-family: typography.$raleway
-
+	@include components.info-page
 </style>

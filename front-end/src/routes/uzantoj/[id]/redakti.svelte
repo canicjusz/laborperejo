@@ -15,6 +15,7 @@
 </script>
 
 <script>
+	import { variables } from '$lib/variables';
 	import { error, feedback } from '$lib/stores';
 	import { goto, beforeNavigate } from '$app/navigation';
 	import { session } from '$app/stores';
@@ -200,7 +201,7 @@
 		if (newResume && resumeSrc) {
 			data.append('resume', newResume);
 		}
-		putData('http://localhost:5000/api/profiles/mine', data, true)
+		putData(variables.base + '/api/profiles/mine', data, true)
 			.then((res) => {
 				feedback.change(res);
 				updateLocalUser(values);
@@ -702,7 +703,7 @@
 			@include mixins.center(false, false)
 			@include mixins.square(48px)
 			right: 0
-			background: colors.$szarszy
+			background: colors.$szary
 			border-top-left-radius: 50%
 			border-top-right-radius: 50%
 			top: -48px
@@ -721,7 +722,7 @@
 				
 			&::before
 				left: -24px
-				background: colors.$szarszy
+				background: colors.$szary
 				@include mixins.square(24px)
 
 		&-pages
@@ -729,7 +730,7 @@
 			border-bottom-right-radius: 10px
 			border-bottom-left-radius: 10px
 			position: relative
-			background: colors.$szarszy
+			background: colors.$szary
 			overflow: visible
 		
 		&-viewer

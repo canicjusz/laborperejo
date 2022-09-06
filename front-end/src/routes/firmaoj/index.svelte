@@ -10,6 +10,7 @@
 </script>
 
 <script>
+	import { variables } from '$lib/variables';
 	import CompanySearch from '$lib/CompanySearch.svelte';
 	import { onlyOpened, getDate, getData, generateNavigation } from '$lib/utils';
 	import { goto, afterNavigate } from '$app/navigation';
@@ -46,7 +47,7 @@
 	};
 
 	const downloadData = async () =>
-		await getData('http://localhost:5000/api/companies' + search)
+		await getData(variables.base + '/api/companies' + search)
 			.then((data) => {
 				pages = data.pages;
 				companies = data.companies;

@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "svelte-kit dev",
-		"build": "svelte-kit build",
+		"build": "env-cmd svelte-kit build",
 		"package": "svelte-kit package",
 		"preview": "svelte-kit preview",
 		"prepare": "svelte-kit sync",
@@ -34,6 +34,8 @@
 		"@tiptap/extension-ordered-list": "^2.0.0-beta.30",
 		"@tiptap/extension-placeholder": "^2.0.0-beta.53",
 		"@tiptap/starter-kit": "^2.0.0-beta.190",
+		"dotenv": "^16.0.2",
+		"env-cmd": "^10.1.0",
 		"fast-equals": "^4.0.1",
 		"klona": "^2.0.5",
 		"pdfjs-dist": "^2.14.305",

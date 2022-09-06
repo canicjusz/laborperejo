@@ -10,6 +10,7 @@
 </script>
 
 <script>
+	import { variables } from '$lib/variables';
 	// todo: zrobic jakis osobny panel do zmiany hasla, bo jak chlop zbanowany to moze chcec se zmienic haslo, no a w sumie czemu nie
 	import * as yup from 'yup';
 	import { extractErrors, putData } from '$lib/utils';
@@ -33,7 +34,7 @@
 			.required('Bonvolu entajpi novan pasvorton.')
 			.matches(
 				/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])[\w#?!@$%^&*ĤŜĜĈĴŬĥŝĝĉĵŭ-]{8,512}$/,
-				'La pasvorto enhavu almenaŭ 8 signojn kaj po almenaŭ unu ciferon, ĉefliteron kaj malĉefliteron. Oni povas aldone uzi jenajn specjalajn signojn: #?!@$%^&*-_'
+				'La pasvorto enhavu 8-512 signojn kaj po almenaŭ unu ciferon, ĉefliteron kaj malĉefliteron. Oni povas aldone uzi jenajn specjalajn signojn: #?!@$%^&*-_'
 			)
 			.test('match', 'Nova pasvorto ne povas esti sama kiel la malnova.', function () {
 				return this.parent.curr !== this.parent.new;
@@ -50,7 +51,7 @@
 		const { newRetyped, ...valuesToSend } = values;
 		sending = true;
 		putData(
-			`http://localhost:5000/api/account/${$session.ID}/password`,
+			variables.base + `/api/account/${$session.ID}/password`,
 			JSON.stringify(valuesToSend),
 			true,
 			{

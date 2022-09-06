@@ -10,6 +10,7 @@
 </script>
 
 <script>
+	import { variables } from '$lib/variables';
 	import { error, feedback } from '$lib/stores';
 	import { getData, deleteData, postData } from '$lib/utils';
 	import { goto } from '$app/navigation';
@@ -79,7 +80,7 @@
 	//add "more" button later
 	const getCompanies = async () => {
 		loading = true;
-		await getData('http://localhost:5000/api/companies?p=' + ++currentPage + '&a=' + $session.ID)
+		await getData(variables.base + '/api/companies?p=' + ++currentPage + '&a=' + $session.ID)
 			.then((res) => {
 				pages = res.pages;
 				companies = [...companies, ...res.companies];
@@ -103,7 +104,7 @@
 
 	const createNewCompany = () => {
 		creatingMode = false;
-		postData('http://localhost:5000/api/companies', JSON.stringify(newCompanyValues), true, {
+		postData(variables.base + '/api/companies', JSON.stringify(newCompanyValues), true, {
 			'Content-type': 'application/json'
 		})
 			.then((res) => {
@@ -126,7 +127,7 @@
 		showPopup = true;
 	};
 	const removeCompany = () => {
-		deleteData(`http://localhost:5000/api/companies/${toRemove.id}`, true)
+		deleteData(variables.base + `/api/companies/${toRemove.id}`, true)
 			.then((res) => {
 				showPopup = false;
 				feedback.change(res);

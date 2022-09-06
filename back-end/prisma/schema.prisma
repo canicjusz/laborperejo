@@ -19,12 +19,11 @@ model User {
   confirmed Boolean @default(false)
   ban Boolean @default(false)
   password_token PasswordToken?
-  role Role @default(user)
   profile Profile?
   companies Company[]
   watchlist Offer[]
   created_at DateTime @default(now())
-  subscription Boolean
+  subscription Boolean @default(true)
 
   @@unique([ID, name])
   @@index([ID, name])
@@ -46,7 +45,7 @@ model Profile {
   website String?
   content String @db.Text
   resume String?
-  email String
+  email String?
   phone String?
   user_ID Int
   user User @relation(fields: [user_ID, user_name], references: [ID, name])
@@ -105,13 +104,20 @@ model Session {
 }
 
 model PasswordToken {
-  token String @id
+  token String @id 
   user User? @relation(fields: [user_ID], references: [ID])
   user_ID Int @unique
   expiresAt   DateTime
 }
 
-enum Role {
+model Patron {
+  key Int @id @default(autoincrement())
+  ID Int
+  type PatronType
+  message String
+}
+
+enum PatronType {
   user
-  administrator
+  company
 }

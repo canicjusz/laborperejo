@@ -9,6 +9,7 @@
 </script>
 
 <script>
+	import { variables } from '$lib/variables';
 	import { goto } from '$app/navigation';
 	import { deleteData } from '$lib/utils';
 	import { error, feedback } from '$lib/stores';
@@ -18,7 +19,7 @@
 
 	export let token;
 	onMount(() => {
-		deleteData('http://localhost:5000/api/offers/subscription/' + token, false, {
+		deleteData(variables.base + '/api/offers/subscription/' + token, false, {
 			'Content-type': 'application/json'
 		})
 			.then((res) => {

@@ -10,6 +10,7 @@
 </script>
 
 <script>
+	import { variables } from '$lib/variables';
 	import { extractErrors, postData, convertDate } from '$lib/utils';
 	import { session } from '$app/stores';
 	import countries from '../../../countries';
@@ -115,7 +116,7 @@
 		sending = true;
 		newOfferValues.companyID = companyID;
 		newOfferValues.close_at = !newOfferValues.closed ? new Date(newOfferValues.close_at) : null;
-		postData('http://localhost:5000/api/offers', JSON.stringify(newOfferValues), true, {
+		postData(variables.base + '/api/offers', JSON.stringify(newOfferValues), true, {
 			'Content-type': 'application/json'
 		})
 			.then((res) => goto(`/ofertoj/${res.ID}`))

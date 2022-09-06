@@ -1,4 +1,5 @@
 import { getData, convertDate } from '$lib/utils';
+import { variables } from '$lib/variables';
 
 export const get = async ({ params, request }) => {
 	const id = params.id;
@@ -8,7 +9,7 @@ export const get = async ({ params, request }) => {
 	const tomorrowFormated = convertDate(tomorrow);
 
 	const { company_ID, company, isOwner, close_at, ID, ...editable } = await getData(
-		`http://localhost:5000/api/offers/${id}`,
+		variables.base + `/api/offers/${id}`,
 		true,
 		{
 			cookie: request.headers.get('cookie')

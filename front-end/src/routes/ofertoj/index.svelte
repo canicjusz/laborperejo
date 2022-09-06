@@ -10,6 +10,7 @@
 </script>
 
 <script>
+	import { variables } from '$lib/variables';
 	import OfferSearch from '$lib/OfferSearch.svelte';
 	import { goto, afterNavigate } from '$app/navigation';
 	import Spinner from '$lib/Spinner.svelte';
@@ -48,7 +49,7 @@
 	};
 
 	const downloadData = async () => {
-		await getData('http://localhost:5000/api/offers' + search)
+		await getData(variables.base + '/api/offers' + search)
 			.then((data) => {
 				pages = data.pages;
 				offers = data.offers;

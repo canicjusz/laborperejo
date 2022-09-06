@@ -11,6 +11,7 @@
 </script>
 
 <script>
+	import { variables } from '$lib/variables';
 	import * as yup from 'yup';
 	import { error, feedback } from '$lib/stores';
 	import { postData } from '$lib/utils';
@@ -30,7 +31,7 @@
 	const sendForm = () => {
 		sending = true;
 		const valuesToSend = { email };
-		postData('http://localhost:5000/api/account/password', JSON.stringify(valuesToSend), true, {
+		postData(variables.base + '/api/account/password', JSON.stringify(valuesToSend), true, {
 			'Content-type': 'application/json'
 		})
 			.then((data) => {

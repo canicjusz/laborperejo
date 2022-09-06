@@ -15,6 +15,7 @@
 </script>
 
 <script>
+	import { variables } from '$lib/variables';
 	import { goto } from '$app/navigation';
 	import { putData } from '$lib/utils';
 	import { error } from '$lib/stores';
@@ -23,7 +24,7 @@
 
 	export let token;
 	onMount(() => {
-		putData('http://localhost:5000/api/account/confirmation', JSON.stringify({ token }), true, {
+		putData(variables.base + '/api/account/confirmation', JSON.stringify({ token }), true, {
 			'Content-type': 'application/json'
 		})
 			.then(() => {
