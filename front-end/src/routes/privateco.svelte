@@ -31,9 +31,10 @@
 		<h2 class="privacy__section-title">Celo de kolektado</h2>
 		<p>
 			Viaj datenoj estas utiligataj nur por funkciado de niaj servoj, ekzemple ĉi tiu retejo aŭ
-			oferto-rememorigilo. Neniu el viaj datenoj estos transdonitaj al eksteraj liverantoj, ĉio
-			restas ĉe niaj datumbazoj.
+			retpoŝto-dissendado. Neniu el viaj datenoj estos venditaj al eksteraj liverantoj.
 		</p>
+		<h2 class="privacy__section-title">Servoj de eksteraj liverantoj</h2>
+		<p>Ni uzas servojn de AWS kaj Zoho por retpoŝto-dissendado. Notinde estas ke tiuj ĉi liverantoj ankaŭ pritraktas viajn datenojn.</p>
 		<h2 class="privacy__section-title">Forigo aŭ ŝanĝo de informoj</h2>
 		<p class="privacy__paragraph">
 			Vi povas peti nin aktualigi viajn datenojn (ekz. retpoŝtadreson uzatan por ensaluti), forigi
