@@ -54,7 +54,7 @@ const uploadResumeOrAvatar = multer({
       } else {
         cb(
           new Error(
-            "Nur bildoj kun jenaj finaĵoj estas akceptataj: .jpg, .jpeg, .png, .gif"
+            "Nur dosieroj kun jenaj finaĵoj estas akceptataj: .jpg, .jpeg, .png, .gif"
           )
         );
       }
@@ -65,7 +65,7 @@ const uploadResumeOrAvatar = multer({
         cb(null, false);
         return cb(
           new Error(
-            "Nur vivresumoj kun jenaj finaĵoj estas akceptataj: .jpg, .jpeg, .png, .gif"
+            "Nur dosieroj kun jenaj finaĵoj estas akceptataj: .pdf"
           )
         );
       }

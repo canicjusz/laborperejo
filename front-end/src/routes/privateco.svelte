@@ -38,7 +38,7 @@
 		<p class="privacy__paragraph">
 			Vi povas peti nin aktualigi viajn datenojn (ekz. retpoŝtadreson uzatan por ensaluti), forigi
 			viajn datenoj (sen ajna kialigo), aŭ se iu ŝajnigas vin, vian firmaon. Oni povas kontakti nin
-			interrete per oficejo@laborperejo.com.
+			interrete per helpo@laborperejo.com.
 		</p>
 	</div>
 </div>

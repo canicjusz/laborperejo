@@ -200,6 +200,7 @@ const getClosingOffers = async () => {
   const tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate() + 1);
   const offers = await prisma.offer.findMany({
+    take: 5,
     where: {
       close_at: {
         lte: tomorrow,

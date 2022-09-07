@@ -39,8 +39,8 @@
 			<li>Oni rajtas krei profilojn nur por laŭleĝaj kaj ekzistantaj firmaoj kaj asocioj.</li>
 		</ol>
 		<p class="rules__paragraph">
-			Se vi pensas, ke vi estis mise punita, retmesaĝu <a href="mailto:oficejo@laborperejo.com"
-				>oficejo@laborperejo.com</a
+			Se vi pensas, ke vi estis mise punita, retmesaĝu <a href="mailto:helpo@laborperejo.com"
+				>helpo@laborperejo.com</a
 			>
 		</p>
 	</div>

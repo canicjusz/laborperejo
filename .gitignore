@@ -2,8 +2,11 @@
 node_modules
 /front-end/build
 /front-end/.svelte-kit
-/assets
-/package
+/assets/logo
+!/assets/logo/company-default.png
+/assets/avatar
+!/assets/avatar/user-default.png
+package-lock.json
 .env
 .env.*
 !.env.example
