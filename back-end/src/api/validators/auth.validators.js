@@ -24,6 +24,7 @@ const registerSchema = yup.object({
       /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])[\w#?!@$%^&*ĤŜĜĈĴŬĥŝĝĉĵŭ-]{8,128}$/
     )
     .required(),
+  consent: yup.bool().required().oneOf([true]),
 });
 
 const loginSchema = yup.object({

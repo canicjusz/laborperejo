@@ -277,3 +277,53 @@
 {"level":30,"time":1662735931312,"pid":11106,"hostname":"pop-os","msg":"1 created new company of id 1."}
 {"level":30,"time":1662736155681,"pid":11464,"hostname":"pop-os","msg":"1 removed company of id 1."}
 {"level":30,"time":1662736180235,"pid":11805,"hostname":"pop-os","msg":"1 created new company of id 2."}
+{"level":30,"time":1662752696757,"pid":7515,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":30,"time":1662752720065,"pid":7515,"hostname":"pop-os","msg":"User 1 edited their profile."}
+{"level":30,"time":1662752754265,"pid":7848,"hostname":"pop-os","msg":"User 1 edited their profile."}
+{"level":30,"time":1662752791492,"pid":7848,"hostname":"pop-os","msg":"User 1 edited their profile."}
+{"level":30,"time":1662752882447,"pid":8094,"hostname":"pop-os","msg":"User 1 edited their profile."}
+{"level":30,"time":1662752918124,"pid":8094,"hostname":"pop-os","msg":"User 1 edited their profile."}
+{"level":30,"time":1662752993169,"pid":8094,"hostname":"pop-os","msg":"User 1 edited their profile."}
+{"level":30,"time":1662753255397,"pid":8094,"hostname":"pop-os","msg":"User 1 edited their profile."}
+{"level":30,"time":1662753600273,"pid":10002,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":30,"time":1662753748964,"pid":10002,"hostname":"pop-os","msg":"User 1 edited their profile."}
+{"level":30,"time":1662753801738,"pid":11500,"hostname":"pop-os","msg":"User 1 edited their profile."}
+{"level":30,"time":1662753981885,"pid":12287,"hostname":"pop-os","msg":"User 1 edited their profile."}
+{"level":30,"time":1662754027384,"pid":12287,"hostname":"pop-os","msg":"Registered omx41713@xcoxc.com."}
+{"level":30,"time":1662754093487,"pid":12287,"hostname":"pop-os","msg":"Resent verification email to omx41713@xcoxc.com."}
+{"level":30,"time":1662754126306,"pid":12287,"hostname":"pop-os","msg":"Confirmed omx41713@xcoxc.com."}
+{"level":30,"time":1662754134997,"pid":12287,"hostname":"pop-os","msg":"Registered omx41713@xcoxc.com."}
+{"level":30,"time":1662754160743,"pid":12287,"hostname":"pop-os","msg":"1 added administrator 2 to company of id 2."}
+{"level":30,"time":1662754198114,"pid":12287,"hostname":"pop-os","msg":"2 created new offer of id 1."}
+{"level":30,"time":1662754207849,"pid":12287,"hostname":"pop-os","msg":"User 1 added offer 1 to their watchlist."}
+{"level":30,"time":1662754209443,"pid":12287,"hostname":"pop-os","msg":"User 2 added offer 1 to their watchlist."}
+{"level":30,"time":1662754225665,"pid":12287,"hostname":"pop-os","msg":"Removed session of 1"}
+{"level":30,"time":1662754234980,"pid":12287,"hostname":"pop-os","msg":"Sent password reset email to janek.bananek371@gmail.com."}
+{"level":30,"time":1662754259936,"pid":12287,"hostname":"pop-os","msg":"Reseted password of 1"}
+{"level":30,"time":1662754268195,"pid":12287,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":30,"time":1662754271495,"pid":12287,"hostname":"pop-os","msg":"Removed session of 1"}
+{"level":30,"time":1662754288540,"pid":12287,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":30,"time":1662754381516,"pid":12287,"hostname":"pop-os","msg":"User 1 changed their password."}
+{"level":30,"time":1662754389804,"pid":12287,"hostname":"pop-os","msg":"Removed session of 2"}
+{"level":30,"time":1662754399562,"pid":12287,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":30,"time":1662754410012,"pid":12287,"hostname":"pop-os","msg":"User 1 changed their password."}
+{"level":30,"time":1662754639229,"pid":12287,"hostname":"pop-os","msg":"Removed session of 1"}
+{"level":30,"time":1662754648826,"pid":12287,"hostname":"pop-os","msg":"Sent password reset email to janek.bananek371@gmail.com."}
+{"level":30,"time":1662754850511,"pid":12287,"hostname":"pop-os","msg":"Sent password reset email to janek.bananek371@gmail.com."}
+{"level":30,"time":1662754998691,"pid":13816,"hostname":"pop-os","msg":"Sent password reset email to janek.bananek371@gmail.com."}
+{"level":30,"time":1662755108965,"pid":14328,"hostname":"pop-os","msg":"Sent password reset email to janek.bananek371@gmail.com."}
+{"level":30,"time":1662755492289,"pid":15530,"hostname":"pop-os","msg":"Sent password reset email to janek.bananek371@gmail.com."}
+{"level":30,"time":1662755532308,"pid":15709,"hostname":"pop-os","msg":"Sent password reset email to janek.bananek371@gmail.com."}
+{"level":30,"time":1662755843183,"pid":16970,"hostname":"pop-os","msg":"Sent password reset email to janek.bananek371@gmail.com."}
+{"level":30,"time":1662756486782,"pid":19145,"hostname":"pop-os","msg":"Reseted password of 1"}
+{"level":30,"time":1662756491567,"pid":19145,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":50,"time":1662756500114,"pid":19145,"hostname":"pop-os","name":"getPageOffer misc error","error":{"clientVersion":"3.15.2"}}
+{"level":50,"time":1662756515082,"pid":19145,"hostname":"pop-os","name":"getPageOffer misc error","error":{"clientVersion":"3.15.2"}}
+{"level":50,"time":1662756567390,"pid":19525,"hostname":"pop-os","name":"getPageOffer misc error","error":{"clientVersion":"3.15.2"}}
+{"level":50,"time":1662756745560,"pid":20145,"hostname":"pop-os","msg":"validate"}
+{"level":30,"time":1662756892316,"pid":20519,"hostname":"pop-os","msg":"1 edited offer of id 1."}
+{"level":50,"time":1662756934751,"pid":20855,"hostname":"pop-os","msg":"validate"}
+{"level":50,"time":1662757004139,"pid":21275,"hostname":"pop-os","msg":"validate"}
+{"level":30,"time":1662757252858,"pid":21776,"hostname":"pop-os","msg":"1 edited the following offers: 1."}
+{"level":30,"time":1662757260255,"pid":21776,"hostname":"pop-os","msg":"1 edited the following offers: 1."}
+{"level":30,"time":1662757300924,"pid":21776,"hostname":"pop-os","msg":"1 edited the following offers: 1."}

@@ -72,6 +72,7 @@ const getPage = async (req, res) => {
     const offers = await offsetPagination(req.query);
     res.json(offers);
   } catch (e) {
+    console.log(e);
     logger.error({ name: "getPageOffer misc error", error: e });
     res.status(500).json({
       content:
@@ -320,38 +321,50 @@ const unsubscribe = async (req, res) => {
       token,
       process.env.SUBSCRIPTION_TOKEN_SECRET,
       async (err, decoded) => {
-        if (err) {
-          if (err.name === "TokenExpiredError") {
-            return res
-              .status(400)
-              .json({ content: "La malabonĵetono senvalidiĝis." });
-          } else if (err.name === "JsonWebTokenError") {
-            return res.status(400).json({
+        try {
+          if (err) {
+            if (err.name === "TokenExpiredError") {
+              return res
+                .status(400)
+                .json({ content: "La malabonĵetono senvalidiĝis." });
+            } else if (err.name === "JsonWebTokenError") {
+              return res.status(400).json({
+                content:
+                  "La malabonĵetono estas nevalida. Bonvolu kontroli, ĉu vi uzas la ĝustan ligilon.",
+              });
+            }
+            throw err;
+          }
+          const email = decoded.email;
+          const [, unsubscribingError] = await handler(
+            unsubscribeByEmail,
+            null,
+            email
+          );
+          if (unsubscribingError) {
+            logger.error({
+              name: "unsubscribe unsubscribingError",
+              error: unsubscribingError,
+              email: email,
+            });
+            return res.status(500).json({
               content:
-                "La malabonĵetono estas nevalida. Bonvolu kontroli, ĉu vi uzas la ĝustan ligilon.",
+                "Ni ial ne povis malabonigi vin. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
             });
           }
-          throw err;
-        }
-        const email = decoded.email;
-        const [, unsubscribingError] = await handler(
-          unsubscribeByEmail,
-          null,
-          email
-        );
-        if (unsubscribingError) {
+          logger.info(`Confirmed ${email}.`);
+          res.json({ content: "Vi malabonis la servon." });
+        } catch (e) {
           logger.error({
-            name: "unsubscribe unsubscribingError",
-            error: unsubscribingError,
-            email: email,
+            name: "confirmEmail misc error",
+            error: e,
+            token: req.body.token,
           });
           return res.status(500).json({
             content:
-              "Ni ial ne povis malabonigi vin. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
+              "Ni ial ne povis konfirmi la registriĝon. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
           });
         }
-        logger.info(`Confirmed ${email}.`);
-        res.json({ content: "Vi malabonis la servon." });
       }
     );
   } catch (e) {

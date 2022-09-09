@@ -9,6 +9,7 @@ import {
   getCredentialsByEmail,
   createPasswordToken,
   deletePasswordTokenByID,
+  getPasswordTokenByID,
 } from "../services/user.service.js";
 import { getUserAndProfileByID } from "../services/profile.service.js";
 import { createTemplate } from "../services/user.service.js";
@@ -227,38 +228,50 @@ const confirmEmail = async (req, res) => {
   try {
     const token = req.body.token;
     jwt.verify(token, process.env.EMAIL_TOKEN_SECRET, async (err, decoded) => {
-      if (err) {
-        if (err.name === "TokenExpiredError") {
-          return res
-            .status(400)
-            .json({ content: "La konfirmiĝĵetono senvalidiĝis." });
-        } else if (err.name === "JsonWebTokenError") {
-          return res.status(400).json({
+      try {
+        if (err) {
+          if (err.name === "TokenExpiredError") {
+            return res
+              .status(400)
+              .json({ content: "La konfirmiĝĵetono senvalidiĝis." });
+          } else if (err.name === "JsonWebTokenError") {
+            return res.status(400).json({
+              content:
+                "La konfirmiĝĵetono estas nevalida. Bonvolu kontroli, ĉu vi uzas la ĝustan ligilon.",
+            });
+          }
+          throw err;
+        }
+        const email = decoded.email;
+        const [, verificationError] = await handler(
+          makeVerifiedByEmail,
+          null,
+          email
+        );
+        if (verificationError) {
+          logger.error({
+            name: "confirmEmail verificationError",
+            error: verificationError,
+            email: email,
+          });
+          return res.status(500).json({
             content:
-              "La konfirmiĝĵetono estas nevalida. Bonvolu kontroli, ĉu vi uzas la ĝustan ligilon.",
+              "Ni ial ne povis konfirmi la registriĝon. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
           });
         }
-        throw err;
-      }
-      const email = decoded.email;
-      const [, verificationError] = await handler(
-        makeVerifiedByEmail,
-        null,
-        email
-      );
-      if (verificationError) {
+        logger.info(`Confirmed ${email}.`);
+        res.json({ content: "Via registriĝo konfirmiĝis." });
+      } catch (e) {
         logger.error({
-          name: "confirmEmail verificationError",
-          error: verificationError,
-          email: email,
+          name: "confirmEmail misc error",
+          error: e,
+          token: req.body.token,
         });
         return res.status(500).json({
           content:
             "Ni ial ne povis konfirmi la registriĝon. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
         });
       }
-      logger.info(`Confirmed ${email}.`);
-      res.json({ content: "Via registriĝo konfirmiĝis." });
     });
   } catch (e) {
     logger.error({
@@ -540,49 +553,65 @@ const deleteSession = (req, res) => {
 const passwordReset = async (req, res) => {
   try {
     const { id, token, password } = req.body;
+
     jwt.verify(
       token,
       process.env.PASSWORD_TOKEN_SECRET,
       async (err, decoded) => {
-        if (err) {
-          if (err.name === "TokenExpiredError") {
-            return res.status(403).json({ content: "La ĵetono senvalidiĝis." });
-          } else if (err.name === "JsonWebTokenError") {
+        try {
+          if (err) {
+            if (err.name === "TokenExpiredError") {
+              return res
+                .status(403)
+                .json({ content: "La ĵetono senvalidiĝis." });
+            } else if (err.name === "JsonWebTokenError") {
+              return res.status(400).json({
+                content:
+                  "La ĵetono estas nevalida. Bonvolu kontroli, ĉu vi uzas la ĝustan ligilon.",
+              });
+            }
+            throw err;
+          }
+          const [tokenDB, gettingError] = await handler(
+            getPasswordTokenByID,
+            null,
+            id
+          );
+          if (gettingError) {
+            if (
+              gettingError instanceof Prisma.PrismaClientKnownRequestError &&
+              gettingError.code === "P2025"
+            ) {
+              return res
+                .status(404)
+                .json({ content: "Ĉi tiu ĵetono ne ekzistas." });
+            }
+            throw deletingError;
+          }
+
+          const isValid = await bcrypt.compare(decoded.token, tokenDB.token);
+          if (isValid) {
+            await deletePasswordTokenByID(id);
+            const hashedPassword = await bcrypt.hash(password, 10);
+            await updatePassword(id, hashedPassword);
+            destroySessions(id);
+            logger.info(`Reseted password of ${id}`);
+            res.json({ content: "Via pasvorto sukcese ŝanĝiĝis." });
+          } else {
             return res.status(400).json({
               content:
                 "La ĵetono estas nevalida. Bonvolu kontroli, ĉu vi uzas la ĝustan ligilon.",
             });
           }
-          throw err;
-        }
-        const [tokenDB, deletingError] = await handler(
-          deletePasswordTokenByID,
-          null,
-          id
-        );
-        if (deletingError) {
-          if (
-            deletingError instanceof Prisma.PrismaClientKnownRequestError &&
-            deletingError.code === "P2025"
-          ) {
-            return res
-              .status(404)
-              .json({ content: "Ĉi tiu ĵetono ne ekzistas." });
-          }
-          throw deletingError;
-        }
-
-        const isValid = await bcrypt.compare(decoded.token, tokenDB.token);
-        if (isValid) {
-          const hashedPassword = await bcrypt.hash(password, 10);
-          await updatePassword(id, hashedPassword);
-          destroySessions(id);
-          logger.info(`Reseted password of ${id}`);
-          res.json({ content: "Via pasvorto sukcese ŝanĝiĝis." });
-        } else {
-          return res.status(400).json({
+        } catch (e) {
+          logger.error({
+            name: "passwordReset misc error",
+            error: e,
+            id: req.body.id,
+          });
+          res.status(500).json({
             content:
-              "La ĵetono estas nevalida. Bonvolu kontroli, ĉu vi uzas la ĝustan ligilon.",
+              "Ni ial ne povis restarigi vian pasvorton. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
           });
         }
       }

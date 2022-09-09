@@ -126,6 +126,13 @@ const deletePasswordTokenByID = async (id) =>
     where: {
       user_ID: id,
     },
+  });
+
+const getPasswordTokenByID = async (id) =>
+  await prisma.passwordToken.findFirst({
+    where: {
+      user_ID: id,
+    },
     select: {
       token: true,
     },
@@ -172,6 +179,7 @@ export {
   makeVerifiedByEmail,
   createPasswordToken,
   deletePasswordTokenByID,
+  getPasswordTokenByID,
   getCompaniesOfID,
   countFollowed,
   unsubscribeByEmail,

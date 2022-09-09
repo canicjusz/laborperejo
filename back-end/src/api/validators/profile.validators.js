@@ -11,7 +11,7 @@ const editCurrentSchema = yup.object({
     .trim()
     .matches(/^\+(?:[0-9] ?){6,14}[0-9]$/)
     .nullable(),
-  email: yup.string().trim().email().max(320),
+  email: yup.string().trim().email().max(320).nullable(),
   fb: yup
     .string()
     .trim()
@@ -66,7 +66,6 @@ const editCurrentSchema = yup.object({
     .max(500)
     .nullable(),
   subscription: yup.boolean().required(),
-  consent: yup.bool().required().oneOf([true]),
 });
 
 const getPageSchema = yup.object({
