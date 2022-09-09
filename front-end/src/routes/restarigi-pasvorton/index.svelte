@@ -108,7 +108,7 @@
 			/>
 			<Error value={errors.new} />
 		</div>
-		<div>
+		<div class="form__part">
 			<label for="new-retyped-password" class="form__label">Reentajpu la novan pasvorton</label>
 			<PasswordInput
 				id="new-retyped-password"

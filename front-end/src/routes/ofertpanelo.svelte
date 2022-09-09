@@ -89,21 +89,27 @@
 			(offers[i].close_at !== originalData[i].close_at && offers[i].closed === false));
 
 	const removeOffer = () => {
-		deleteData(variables.base + `/api/offers/${toRemove.id}`, true).then((res) => {
-			offers.splice(toRemove.index, 1);
-			originalData.splice(toRemove.index, 1);
-			offersChanged.splice(toRemove.index, 1);
-			clearToRemove();
-			offersChanged = offersChanged;
-			//gotta do this cuz of the each block
-			offers = offers;
-		});
+		deleteData(variables.base + `/api/offers/${toRemove.id}`, true)
+			.then((res) => {
+				offers.splice(toRemove.index, 1);
+				originalData.splice(toRemove.index, 1);
+				offersChanged.splice(toRemove.index, 1);
+				clearToRemove();
+				offersChanged = offersChanged;
+				//gotta do this cuz of the each block
+				offers = offers;
+			})
+			.catch((err) => {
+				error.change(err);
+				clearToRemove();
+			});
 	};
 	const acceptChanges = () => {
 		let changes = [];
 		sending = true;
 		offersChanged.forEach((edited, i) => {
 			if (edited) {
+				if (offers[i].close_at == '') offers[i].closed = true;
 				changes.push({
 					ID: offers[i].ID,
 					closed: offers[i].closed,

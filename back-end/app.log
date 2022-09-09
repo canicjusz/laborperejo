@@ -327,3 +327,5 @@
 {"level":30,"time":1662757252858,"pid":21776,"hostname":"pop-os","msg":"1 edited the following offers: 1."}
 {"level":30,"time":1662757260255,"pid":21776,"hostname":"pop-os","msg":"1 edited the following offers: 1."}
 {"level":30,"time":1662757300924,"pid":21776,"hostname":"pop-os","msg":"1 edited the following offers: 1."}
+{"level":30,"time":1662758216255,"pid":23292,"hostname":"pop-os","msg":"1 changed owner of company 2 to 2"}
+{"level":30,"time":1662758219002,"pid":23292,"hostname":"pop-os","msg":"1 edited company of id 2."}

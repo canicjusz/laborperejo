@@ -82,6 +82,9 @@ input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration 
   display: none
 
+*
+  white-space: normal
+
 html
   scroll-behavior: smooth
 

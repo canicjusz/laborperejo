@@ -341,6 +341,7 @@
 			flex-wrap: wrap
 
 			&__button
+				cursor: pointer
 				background: transparent
 				border: none
 				border-radius: 5px

@@ -43,7 +43,7 @@
 						>
 						{company.address}, {company.country}
 					</span>
-					{#if company.isOwner}
+					{#if company.isAdmin}
 						<a href={`/firmaoj/${id}/redakti`} class="company__left-element"
 							><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
 								><path fill="none" d="M0 0h24v24H0z" /><path
