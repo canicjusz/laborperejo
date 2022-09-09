@@ -455,6 +455,11 @@
 		@include mixins.circlePhoto(40px)
 
 	&__name
+		text-overflow: ellipsis
+		overflow: hidden
+		white-space: nowrap
+		max-width: 250px
+		min-width: 70px
 		pointer-events: none
 
 
@@ -476,7 +481,7 @@
 	&__number
 		user-select: none
 		top: 5px
-		right: 0
+		right: -1px
 		position: absolute
 		border-radius: 50%
 		@include mixins.square(18px)
@@ -579,7 +584,7 @@
 	&--clicked .hamburger__bun
 		transform: translateX(51px)
 
-@media (max-width: 950px)
+@media (max-width: 1050px)
 	.navbar
 
 		&__inner-container

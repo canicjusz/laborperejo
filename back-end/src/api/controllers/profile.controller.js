@@ -131,7 +131,7 @@ const getPage = async (req, res) => {
     const profiles = await getPageByOffset(skip, take, where);
     res.json({ profiles, pages });
   } catch (e) {
-    logger.error({ name: "getCurrentProfile", error: e, where });
+    logger.error({ name: "getCurrentProfile", error: e });
     res.status(500).json({
       content:
         "Ni ial ne povis sendi liston de profiloj. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",

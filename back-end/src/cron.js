@@ -25,9 +25,7 @@ const getDate = (string) => {
 };
 
 const ourEmail = '"Jan Michalak" <oficejo@laborperejo.com>';
-const host = process.env.HEROKU
-  ? "laborperejo.herokuapp.com"
-  : "localhost:5000";
+const host = process.env.BASE;
 
 const sendOfferReminder = async (email, offers) => {
   const token = jwt.sign(
@@ -70,7 +68,7 @@ const sendOfferReminder = async (email, offers) => {
                   background: white;
                 "
               >
-                <img src="laborperejo.herokuapp.com/logo.png" />
+                <img src="https://laborperejo.com/logo.png" />
               </td>
             </tr>
             <tr>
@@ -97,15 +95,19 @@ const sendOfferReminder = async (email, offers) => {
                   <td
                     style="vertical-align: top; border-bottom: 1px solid #d7d7d7"
                   >
-                    <img
-                      style="padding: 10px"
-                      src="${host + offer.company.logo}"
-                    />
+                    <a href="${host}/ofertoj/${offer.ID}">
+                      <img
+                        style="padding: 10px"
+                        src="${host + offer.company.logo}"
+                      />
+                    </a>
                   </td>
                   <td style="padding: 10px; border-bottom: 1px solid #d7d7d7">
                     <table cellpadding="0" cellspacing="0" border="0">
                       <tr>
-                        <td><h1 style="margin: 10px 0">${offer.title}</h1></td>
+                        <td><h1 style="margin: 10px 0"><a href="${host}/ofertoj/${
+                  offer.ID
+                }">${offer.title}</a></h1></td>
                       </tr>
                       <tr>
                         <td><p style="margin: 0 0 10px 0"><a href="${host}/firmaoj/${
@@ -165,7 +167,7 @@ const sendOfferReminder = async (email, offers) => {
                   <tr>
                     <td style="text-align: center; padding-top: 10px">
                       <small>
-                        <a style="color: #1b75bc">Laborperejo</a> - farite de Jan
+                        <a style="color: #1b75bc" href="${host}">Laborperejo</a> - farite de Jan
                         Michalak
                       </small>
                     </td>

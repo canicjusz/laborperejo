@@ -269,6 +269,7 @@
 	<meta name="description" content="Paĝo por redakti firmaon ĉe laborperejo." />
 </svelte:head>
 <Popup show={showPopup}>
+	<h1 class="popup__title popup__title--red">Averto!</h1>
 	<p class="popup__text">
 		Ĉu vi certe volas eksiĝi posedanto kaj posedantigi {newOwner.name}? Vi perdos eblon forigi la
 		firmaon kaj regi la administrantaron.

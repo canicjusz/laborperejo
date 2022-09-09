@@ -153,6 +153,7 @@
 	<meta name="robots" content="noindex,nofollow" />
 </svelte:head>
 <Popup show={showPopup}>
+	<h1 class="popup__title popup__title--red">Averto!</h1>
 	<p class="popup__text">
 		Ĉu vi certe volas forigi firmaon {offers[toRemove.index].title} kaj ĝiajn ofertojn? La operacio ne
 		malfareblas!

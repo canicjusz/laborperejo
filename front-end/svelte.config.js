@@ -6,11 +6,6 @@ const config = {
 	preprocess: preprocessor(),
 	kit: {
 		adapter: adapter({ out: 'build' })
-	},
-	vite: {
-		define: {
-			'process.env': process.env
-		}
 	}
 };
 

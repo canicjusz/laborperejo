@@ -139,7 +139,7 @@
 	<meta name="description" content="Paĝo por registriĝi ĉe laborperejo." />
 </svelte:head>
 <Popup show={showPopup}>
-	<h1 class="popup__title">Bonvenon!</h1>
+	<h1 class="popup__title popup__title--blue">Bonvenon!</h1>
 	<p class="popup__text">
 		Ni sendis al vi ({values.email}) mesaĝon kun registriĝ-ligilo. Bonvolu kontroli vian
 		retpoŝtkeston, atentu ke la retmesaĝo povas iri ĝis 5 minutoj.

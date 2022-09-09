@@ -1,7 +1,7 @@
 import { getData } from '$lib/utils';
 import { variables } from '$lib/variables';
 
-export const get = async ({ params, request }) => {
+export const GET = async ({ params, request }) => {
 	const id = params.id;
 
 	const company = await getData(variables.base + `/api/companies/${id}`, true, {

@@ -1,7 +1,7 @@
 import { variables } from '$lib/variables';
 import { getData } from '$lib/utils';
 
-export const get = async ({ params, request }) => {
+export const GET = async ({ params, request }) => {
 	const id = params.id;
 
 	const {

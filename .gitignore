@@ -2,6 +2,7 @@
 node_modules
 front-end/build
 front-end/.svelte-kit
+back-end/app.log
 assets/logo/*
 !assets/logo/company-default.png
 assets/avatar/*

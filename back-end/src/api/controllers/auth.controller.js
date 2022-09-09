@@ -19,9 +19,7 @@ import logger from "../../../logger.js";
 const { Prisma } = prismaPkg;
 import transporter from "../../nodemailer.js";
 const ourEmail = '"Jan Michalak" <oficejo@laborperejo.com>';
-const host = process.env.HEROKU
-  ? "laborperejo.herokuapp.com"
-  : "localhost:5000";
+const host = process.env.BASE;
 
 const sendConfirmationEmail = async (email) => {
   const token = jwt.sign(
@@ -33,7 +31,7 @@ const sendConfirmationEmail = async (email) => {
       expiresIn: "2h",
     }
   );
-  const url = `http://${host}/konfirmi-registrigxon/${token}`;
+  const url = `${host}/konfirmi-registrigxon/${token}`;
   await transporter.sendMail({
     from: ourEmail,
     to: email,
@@ -65,7 +63,7 @@ const sendConfirmationEmail = async (email) => {
               background: white;
             "
           >
-            <img src="https://laborperejo.herokuapp.com/logo.png" />
+            <img src="https://laborperejo.com/logo.png" />
           </td>
         </tr>
         <tr>
@@ -81,7 +79,7 @@ const sendConfirmationEmail = async (email) => {
         <tr>
           <td style="text-align: center; padding: 10px 0">
             <a
-              href=""
+              href="${url}"
               style="
                 height: 50px;
                 width: 200px;
@@ -112,18 +110,9 @@ const sendConfirmationEmail = async (email) => {
               "
             >
               <tr>
-                <td>
-                  <small
-                    >Ĉi tiu retpoŝtmesaĝo estis sendita de Laborperejo. Se vi ne
-                    volas ricevi pliajn ofertrememorigojn, klaku
-                    <a style="color: #1b75bc">ĉi tie</a>.</small
-                  >
-                </td>
-              </tr>
-              <tr>
                 <td style="text-align: center; padding-top: 10px">
                   <small>
-                    <a style="color: #1b75bc">Laborperejo</a> - farite de Jan
+                    <a style="color: #1b75bc" href="${host}">Laborperejo</a> - farite de Jan
                     Michalak
                   </small>
                 </td>
@@ -410,7 +399,7 @@ const sendPasswordReset = async (req, res) => {
         expiresIn: "2h",
       }
     );
-    const url = `http://${host}/restarigi-pasvorton/${user.ID}/${urlToken}`;
+    const url = `${host}/restarigi-pasvorton/${user.ID}/${urlToken}`;
     await transporter.sendMail({
       from: ourEmail,
       to: email,
@@ -442,7 +431,7 @@ const sendPasswordReset = async (req, res) => {
               background: white;
             "
           >
-            <img src="https://laborperejo.herokuapp.com/logo.png" />
+            <img src="https://laborperejo.com/logo.png" />
           </td>
         </tr>
         <tr>
@@ -459,7 +448,7 @@ const sendPasswordReset = async (req, res) => {
         <tr>
           <td style="text-align: center; padding: 10px 0">
             <a
-              href=""
+              href="${url}"
               style="
                 height: 50px;
                 width: 200px;
@@ -498,18 +487,9 @@ const sendPasswordReset = async (req, res) => {
               "
             >
               <tr>
-                <td>
-                  <small
-                    >Ĉi tiu retpoŝtmesaĝo estis sendita de Laborperejo. Se vi ne
-                    volas ricevi pliajn ofertrememorigojn, klaku
-                    <a style="color: #1b75bc">ĉi tie</a>.</small
-                  >
-                </td>
-              </tr>
-              <tr>
                 <td style="text-align: center; padding-top: 10px">
                   <small>
-                    <a style="color: #1b75bc">Laborperejo</a> - farite de Jan
+                    <a style="color: #1b75bc" href="${host}">Laborperejo</a> - farite de Jan
                     Michalak
                   </small>
                 </td>

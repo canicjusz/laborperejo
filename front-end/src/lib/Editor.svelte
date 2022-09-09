@@ -283,6 +283,7 @@
 	<div bind:this={element} class="editor" />
 </div>
 <Popup show={showImagePopup}>
+	<h1 class="popup__title popup__title--blue">Aldoni bildon</h1>
 	<input type="url" class="popup__input" placeholder="Ligilo al bildo" bind:value={image} />
 	<div class="popup__buttons">
 		<button
@@ -298,6 +299,7 @@
 	</div>
 </Popup>
 <Popup show={showLinkPopup}>
+	<h1 class="popup__title popup__title--blue">Aldoni ligilon</h1>
 	<input type="url" class="popup__input" placeholder="Ligilo" bind:value={link} />
 	<div class="popup__buttons">
 		<button

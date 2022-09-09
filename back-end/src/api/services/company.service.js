@@ -14,6 +14,7 @@ const createByID = async (ID, data) =>
       owner: ID,
     },
     select: {
+      owner: true,
       ID: true,
       logo: true,
       name: true,

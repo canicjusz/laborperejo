@@ -62,7 +62,12 @@
 			margin: 0
 			font-size: typography.$large
 			font-family: typography.$raleway
-			color: colors.$zielony
+
+			&--red
+				color: colors.$crimson
+
+			&--blue
+				color: colors.$niebieski-link
 
 		&__text
 			margin: 0

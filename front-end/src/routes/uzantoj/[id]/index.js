@@ -1,7 +1,7 @@
 import { getData } from '$lib/utils';
 import { variables } from '$lib/variables';
 
-export const get = async ({ params, request }) => {
+export const GET = async ({ params, request }) => {
 	//${url.host}
 	const res = await getData(variables.base + `/api/profiles/${params.id}`, true, {
 		cookie: request.headers.get('cookie')

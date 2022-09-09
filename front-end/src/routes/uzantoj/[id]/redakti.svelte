@@ -55,7 +55,8 @@
 			.string()
 			.trim()
 			.email('La retpoŝtadreso ne validas.')
-			.max(320, 'Retpoŝtadreso ne povas esti pli longa ol 320 signoj.'),
+			.max(320, 'Retpoŝtadreso ne povas esti pli longa ol 320 signoj.')
+			.nullable(),
 		fb: yup
 			.string()
 			.trim()

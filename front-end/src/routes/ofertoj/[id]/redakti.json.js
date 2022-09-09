@@ -1,7 +1,7 @@
 import { getData, convertDate } from '$lib/utils';
 import { variables } from '$lib/variables';
 
-export const get = async ({ params, request }) => {
+export const GET = async ({ params, request }) => {
 	const id = params.id;
 
 	const tomorrow = new Date();

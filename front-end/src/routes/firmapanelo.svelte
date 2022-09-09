@@ -155,6 +155,7 @@
 	</div>
 {:then}
 	<Popup show={showPopup}>
+		<h1 class="popup__title popup__title--red">Averto!</h1>
 		<p class="popup__text">
 			Ĉu vi certe volas forigi firmaon {companies[toRemove.index].name} kaj ĝiajn ofertojn? La operacio
 			ne malfareblas!
@@ -312,7 +313,7 @@
 							/>
 						</div>
 					</label>
-					<Error value={errors.indsutry} />
+					<Error value={errors.industry} />
 				</div>
 				<div class="form__part">
 					<label class="form__label" for="country">
