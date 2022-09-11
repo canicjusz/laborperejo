@@ -2,7 +2,6 @@ import { getPatrons } from "../services/patrons.service.js";
 import { getNameByID as getUserNameByID } from "../services/user.service.js";
 import { getNameByID as getCompanyNameByID } from "../services/company.service.js";
 import handler from "../utils/handler.js";
-import logger from "../../../logger.js";
 
 const convertPatron = async ({ type, ID, message }) => {
   const isUser = type === "user";
@@ -21,7 +20,7 @@ const get = async (req, res) => {
   const [patrons, error] = await handler(getPatrons, null);
   if (error) {
     console.log(error);
-    logger.error({
+    console.error({
       name: "getPatrons misc error",
       error,
     });

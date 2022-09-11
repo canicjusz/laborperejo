@@ -15,7 +15,6 @@ import countriesList from "../../../../countries.js";
 import sanitizeHtml from "sanitize-html";
 import handler from "../utils/handler.js";
 import prismaPkg from "@prisma/client";
-import logger from "../../../logger.js";
 const { Prisma } = prismaPkg;
 
 const getPage = async (req, res) => {
@@ -69,7 +68,7 @@ const getPage = async (req, res) => {
     const companies = await getPageByOffset(skip, take, where);
     res.json({ companies, pages });
   } catch (e) {
-    logger.error({ name: "getPageCompany misc error", error: e });
+    console.error({ name: "getPageCompany misc error", error: e });
     res.status(500).json({
       content:
         "Ni ial ne povis sendi liston de firmaoj. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
@@ -108,7 +107,7 @@ const get = async (req, res) => {
     }
     res.json(company);
   } catch (e) {
-    logger.error({ name: "getCompany", error: e });
+    console.error({ name: "getCompany", error: e });
     return res.status(500).json({
       content:
         "Ni ial ne povis sendi informojn pri la firmaon. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
@@ -120,7 +119,7 @@ const create = async (req, res) => {
   const sessionID = req.session.ID;
   const [company, error] = await handler(createByID, null, sessionID, req.body);
   if (error) {
-    logger.error({
+    console.error({
       name: "createCompany",
       error: error,
       sessionID,
@@ -131,7 +130,7 @@ const create = async (req, res) => {
         "Ni ial ne povis krei la firmaon. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
     });
   }
-  logger.info(`${sessionID} created new company of id ${company.ID}.`);
+  console.info(`${sessionID} created new company of id ${company.ID}.`);
   res.json(company);
 };
 
@@ -147,13 +146,13 @@ const remove = async (req, res) => {
         .status(404)
         .json({ content: "Firmao kun ĉi tiu identigilo ne ekzistas." });
     }
-    logger.error({ name: "removeCompany misc error", error, companyID });
+    console.error({ name: "removeCompany misc error", error, companyID });
     return res.status(500).json({
       content:
         "Ni ial ne povis forigi la firmaon. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
     });
   }
-  logger.info(`${req.session.ID} removed company of id ${companyID}.`);
+  console.info(`${req.session.ID} removed company of id ${companyID}.`);
   res.json({ content: "La firmao estis forigita." });
 };
 
@@ -174,13 +173,13 @@ const edit = async (req, res) => {
         .status(404)
         .json({ content: "Firmao kun ĉi tiu identigilo ne ekzistas." });
     }
-    logger.error({ name: "editCompany misc error", error, companyID, data });
+    console.error({ name: "editCompany misc error", error, companyID, data });
     return res.status(500).json({
       content:
         "Ni ial ne povis redakti la firmaon. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
     });
   }
-  logger.info(`${req.session.ID} edited company of id ${companyID}.`);
+  console.info(`${req.session.ID} edited company of id ${companyID}.`);
   res.json({ content: "La ŝanĝoj estis akceptitaj." });
 };
 
@@ -213,7 +212,7 @@ const addAdministrator = async (req, res) => {
           .json({ content: "Uzanto kun ĉi tiu identigilo ne ekzistas." });
       }
     }
-    logger.error({
+    console.error({
       name: "addAdministrator misc error",
       error,
       companyID,
@@ -224,7 +223,7 @@ const addAdministrator = async (req, res) => {
         "Ni ial ne povis aldoni la administranton. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
     });
   }
-  logger.info(
+  console.info(
     `${sessionUserID} added administrator ${userID} to company of id ${companyID}.`
   );
   res.json({ content: "La administranto estis aldonita." });
@@ -259,7 +258,7 @@ const removeAdministrator = async (req, res) => {
           .json({ content: "Uzanto kun ĉi tiu identigilo ne ekzistas." });
       }
     }
-    logger.error({
+    console.error({
       name: "removeAdministrator misc error",
       error,
       companyID,
@@ -270,7 +269,7 @@ const removeAdministrator = async (req, res) => {
         "Ni ial ne povis forigi la administranton. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
     });
   }
-  logger.info(
+  console.info(
     `${sessionUserID} removed administrator ${userID} from company of id ${companyID}.`
   );
   res.json({ content: "La administranto estis forigita." });
@@ -300,7 +299,7 @@ const changeOwner = async (req, res) => {
           .json({ content: "Uzanto kun ĉi tiu identigilo ne ekzistas." });
       }
     }
-    logger.error({
+    console.error({
       name: "changeOwner misc error",
       error,
       companyID,
@@ -311,7 +310,7 @@ const changeOwner = async (req, res) => {
         "Ni ial ne povis ŝanĝi posedanton. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
     });
   }
-  logger.info(
+  console.info(
     `${sessionUserID} changed owner of company ${companyID} to ${userID}`
   );
   res.json({ content: "Posedanto ŝanĝiĝis." });

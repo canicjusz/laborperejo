@@ -1,5 +1,3 @@
-import logger from "../../../logger.js";
-
 const validate = (key) => (resourceSchema) => async (req, res, next) => {
   const isJSON = req[key].json;
   let values = req[key].json ?? req[key];
@@ -16,7 +14,7 @@ const validate = (key) => (resourceSchema) => async (req, res, next) => {
     }
     next();
   } catch (e) {
-    logger.error("validate", e, values);
+    console.error("validate", e, values);
     res.status(400).json({ content: e.errors.join(", ") });
   }
 };

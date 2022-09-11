@@ -16,7 +16,6 @@ import { createTemplate } from "../services/user.service.js";
 import { destroySessions } from "../services/session.service.js";
 import handler from "../utils/handler.js";
 import prismaPkg from "@prisma/client";
-import logger from "../../../logger.js";
 const { Prisma } = prismaPkg;
 import transporter from "../../nodemailer.js";
 const ourEmail = '"Jan Michalak" <oficejo@laborperejo.com>';
@@ -155,7 +154,7 @@ const editPassword = async (req, res) => {
         sessionID
       );
       if (sessionError) {
-        logger.error({
+        console.error({
           name: "editPassword sessionError",
           error: sessionError,
           ID: paramsID,
@@ -164,13 +163,13 @@ const editPassword = async (req, res) => {
           .status(500)
           .json({ content: "Ni ne povis elsaluti vin el aliaj aparatoj." });
       }
-      logger.info(`User ${paramsID} changed their password.`);
+      console.info(`User ${paramsID} changed their password.`);
       return res.json({ content: "Via pasvorto ĝisdatiĝis" });
     } else {
       return res.status(400).json({ content: "Malĝusta pasvorto." });
     }
   } catch (e) {
-    logger.error({
+    console.error({
       name: "editPassword misc error",
       error: sessionError,
       ID: req.params.ID,
@@ -207,12 +206,12 @@ const resendConfirmationEmail = async (req, res) => {
     if (sendingError) {
       throw sendingError;
     }
-    logger.info(`Resent verification email to ${email}.`);
+    console.info(`Resent verification email to ${email}.`);
     res.json({
       content: "Ni sendis al vi mesaĝon kun ligilo por fini vian registriĝon.",
     });
   } catch (e) {
-    logger.error({
+    console.error({
       name: "resendConfirmationEmail misc error",
       error: e,
       email: req.body.email,
@@ -249,7 +248,7 @@ const confirmEmail = async (req, res) => {
           email
         );
         if (verificationError) {
-          logger.error({
+          console.error({
             name: "confirmEmail verificationError",
             error: verificationError,
             email: email,
@@ -259,10 +258,10 @@ const confirmEmail = async (req, res) => {
               "Ni ial ne povis konfirmi la registriĝon. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
           });
         }
-        logger.info(`Confirmed ${email}.`);
+        console.info(`Confirmed ${email}.`);
         res.json({ content: "Via registriĝo konfirmiĝis." });
       } catch (e) {
-        logger.error({
+        console.error({
           name: "confirmEmail misc error",
           error: e,
           token: req.body.token,
@@ -274,7 +273,7 @@ const confirmEmail = async (req, res) => {
       }
     });
   } catch (e) {
-    logger.error({
+    console.error({
       name: "confirmEmail misc error",
       error: e,
       token: req.body.token,
@@ -305,7 +304,7 @@ const register = async (req, res) => {
     }
     const [, emailError] = await handler(sendConfirmationEmail, null, email);
     if (emailError) {
-      logger.error({
+      console.error({
         name: "register emailError",
         error: emailError,
         email: email,
@@ -315,11 +314,11 @@ const register = async (req, res) => {
           "Ni ial ne povis sendi la repoŝtmesaĝon. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
       });
     }
-    logger.info(`Registered ${email}.`);
+    console.info(`${email} registered.`);
     res.json({ content: "Vi registriĝis" });
   } catch (e) {
     console.log(e);
-    logger.error({
+    console.error({
       name: "register misc error",
       error: e,
       email: req.body.email,
@@ -365,9 +364,13 @@ const login = async (req, res) => {
           "Unue finu registriĝon per la ligilo sendita al via retpoŝtadreso.",
       });
     }
-    logger.info(`Registered ${email}.`);
+    console.info(`${email} logged in.`);
   } catch (e) {
-    logger.error({ name: "login misc error", error: e, email: req.body.email });
+    console.error({
+      name: "login misc error",
+      error: e,
+      email: req.body.email,
+    });
     return res.status(500).json({
       content:
         "Ni ial ne povis vin ensalutigi. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
@@ -516,10 +519,10 @@ const sendPasswordReset = async (req, res) => {
 </html>
 `,
     });
-    logger.info(`Sent password reset email to ${email}.`);
+    console.info(`Sent password reset email to ${email}.`);
     res.json({ content: "Ni sendis la mesaĝon kun restarig-ligilon al vi." });
   } catch (e) {
-    logger.error({
+    console.error({
       name: "sendPasswordReset misc error",
       error: e,
       email: req.body.email,
@@ -535,7 +538,7 @@ const deleteSession = (req, res) => {
   const ID = req.session.ID;
   req.session.destroy((err) => {
     if (err) {
-      logger.error({
+      console.error({
         name: "deleteSession misc error",
         error: err,
         ID,
@@ -545,7 +548,7 @@ const deleteSession = (req, res) => {
           "Ni ial ne povis vin elsalutigi. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
       });
     }
-    logger.info(`Removed session of ${ID}`);
+    console.info(`Removed session of ${ID}`);
     res.json({ content: "Vi elsalutis." });
   });
 };
@@ -595,7 +598,7 @@ const passwordReset = async (req, res) => {
             const hashedPassword = await bcrypt.hash(password, 10);
             await updatePassword(id, hashedPassword);
             destroySessions(id);
-            logger.info(`Reseted password of ${id}`);
+            console.info(`Reseted password of ${id}`);
             res.json({ content: "Via pasvorto sukcese ŝanĝiĝis." });
           } else {
             return res.status(400).json({
@@ -604,7 +607,7 @@ const passwordReset = async (req, res) => {
             });
           }
         } catch (e) {
-          logger.error({
+          console.error({
             name: "passwordReset misc error",
             error: e,
             id: req.body.id,
@@ -617,7 +620,7 @@ const passwordReset = async (req, res) => {
       }
     );
   } catch (e) {
-    logger.error({
+    console.error({
       name: "passwordReset misc error",
       error: e,
       id: req.body.id,

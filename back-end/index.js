@@ -9,6 +9,8 @@ import bodyParser from "body-parser";
 import { handler } from "../front-end/build/handler.js";
 import "./src/cron.js";
 
+console.error("beka xD", new Error("co"));
+
 dotenv.config();
 
 const app = express();

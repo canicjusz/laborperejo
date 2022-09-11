@@ -1,7 +1,6 @@
 import multer from "multer";
 import path from "path";
 import { fileURLToPath } from "url";
-import logger from "../../../logger.js";
 const maxSize = 1 * 1000 * 1000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -88,7 +87,7 @@ const middleware = (upload) => (req, res, next) => {
         });
       }
     } else if (err) {
-      logger.error({ err, sessionID: req.session.ID });
+      console.error({ err, sessionID: req.session.ID });
       return res.status(500).json({
         content:
           "Ni ial ne povis alŝuti la dosieron. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",

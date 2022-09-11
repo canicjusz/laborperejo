@@ -9,7 +9,6 @@ import countriesList from "../../../../countries.js";
 import sanitizeHtml from "sanitize-html";
 import handler from "../utils/handler.js";
 import prismaPkg from "@prisma/client";
-import logger from "../../../logger.js";
 const { Prisma } = prismaPkg;
 
 const get = async (req, res) => {
@@ -17,7 +16,7 @@ const get = async (req, res) => {
   const paramsID = req.params.ID;
   const [user, error] = await handler(getProfileByID, null, paramsID);
   if (error) {
-    logger.error({ name: "getProfile", error, paramsID });
+    console.error({ name: "getProfile", error, paramsID });
     return res.status(500).json({
       content:
         "Ni ial ne povis sendi informojn pri la profilo. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
@@ -56,13 +55,13 @@ const editCurrent = async (req, res) => {
         .status(404)
         .json({ content: "Profilo kun ĉi tiu identigilo ne ekzistas." });
     }
-    logger.error({ name: "editProfile", error, ID, data });
+    console.error({ name: "editProfile", error, ID, data });
     return res.status(500).json({
       content:
         "Ni ial ne povis redakti la profilon. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
     });
   }
-  logger.info(`User ${ID} edited their profile.`);
+  console.info(`User ${ID} edited their profile.`);
   res.json({ content: "La ŝanĝoj estis akceptitaj." });
 };
 
@@ -72,7 +71,7 @@ const getCurrent = async (req, res) => {
     const ID = req.session.ID;
     const [user, error] = await handler(getUserAndProfileByID, null, ID);
     if (error) {
-      logger.error({ name: "getCurrentProfile", error, ID });
+      console.error({ name: "getCurrentProfile", error, ID });
       return res.status(500).json({
         content:
           "Ni ial ne povis sendi informojn pri la profilo. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
@@ -131,7 +130,7 @@ const getPage = async (req, res) => {
     const profiles = await getPageByOffset(skip, take, where);
     res.json({ profiles, pages });
   } catch (e) {
-    logger.error({ name: "getCurrentProfile", error: e });
+    console.error({ name: "getCurrentProfile", error: e });
     res.status(500).json({
       content:
         "Ni ial ne povis sendi liston de profiloj. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",

@@ -1,7 +1,6 @@
 import { getBanAndConfirmed } from "../services/user.service.js";
 import * as yup from "yup";
 import handler from "../utils/handler.js";
-import logger from "../../../logger.js";
 
 const requiredSessionID = yup.number().required().positive().integer();
 
@@ -39,7 +38,7 @@ const bannedOrUnconfirmed = async (req, res, next) => {
   }
   const [data, prismaError] = await handler(getBanAndConfirmed, null, ID);
   if (prismaError) {
-    logger.error({ name: "bannedOrUnconfirmed", error: prismaError, ID });
+    console.error({ name: "bannedOrUnconfirmed", error: prismaError, ID });
     return res.status(500).end();
   }
   if (!data) {

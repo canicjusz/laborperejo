@@ -3,14 +3,13 @@ import {
   getOwnerByID,
 } from "../services/company.service.js";
 import handler from "../utils/handler.js";
-import logger from "../../../logger.js";
 
 const ownerOnly = async (req, res, next) => {
   const companyID = req.params.companyID || req.body.companyID;
   const ID = req.session.ID;
   const [company, error] = await handler(getOwnerByID, null, companyID);
   if (error) {
-    logger.error({ name: "ownerOnlyCompany", error, companyID, ID });
+    console.error({ name: "ownerOnlyCompany", error, companyID, ID });
     return res.status(500).json({
       content:
         "Nedefinita servila eraro. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
@@ -36,7 +35,7 @@ const adminOnly = async (req, res, next) => {
     companyID
   );
   if (error) {
-    logger.error({ name: "adminOnlyCompany", error, companyID, ID });
+    console.error({ name: "adminOnlyCompany", error, companyID, ID });
     return res.status(500).json({
       content:
         "Nedefinita servila eraro. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",

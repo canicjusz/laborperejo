@@ -14,7 +14,6 @@ import categoriesList from "../../../../categories.js";
 import sanitizeHtml from "sanitize-html";
 import handler from "../utils/handler.js";
 import prismaPkg from "@prisma/client";
-import logger from "../../../logger.js";
 import jwt from "jsonwebtoken";
 const { Prisma } = prismaPkg;
 
@@ -73,7 +72,7 @@ const getPage = async (req, res) => {
     res.json(offers);
   } catch (e) {
     console.log(e);
-    logger.error({ name: "getPageOffer misc error", error: e });
+    console.error({ name: "getPageOffer misc error", error: e });
     res.status(500).json({
       content:
         "Ni ial ne povis sendi liston de ofertoj. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
@@ -94,7 +93,7 @@ const create = async (req, res) => {
     data
   );
   if (error) {
-    logger.error({
+    console.error({
       name: "createOffer misc error",
       error,
       companyID,
@@ -106,7 +105,7 @@ const create = async (req, res) => {
         "Ni ial ne povis krei la oferton. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
     });
   }
-  logger.info(`${req.session.ID} created new offer of id ${offer.ID}.`);
+  console.info(`${req.session.ID} created new offer of id ${offer.ID}.`);
   res.json(offer);
 };
 
@@ -122,7 +121,7 @@ const remove = async (req, res) => {
         .status(404)
         .json({ content: "Oferto kun ĉi tiu identigilo ne ekzistas." });
     }
-    logger.error({
+    console.error({
       name: "removeOffer misc error",
       error,
       offerID,
@@ -133,7 +132,7 @@ const remove = async (req, res) => {
         "Ni ial ne povis forigi la oferton. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
     });
   }
-  logger.info(`${req.session.ID} removed offer of id ${offerID}.`);
+  console.info(`${req.session.ID} removed offer of id ${offerID}.`);
   res.json({ content: "La oferto estis forigita." });
 };
 
@@ -154,7 +153,7 @@ const editSeveral = async (req, res) => {
           .status(404)
           .json({ content: "Oferto kun ĉi tiu identigilo ne ekzistas." });
       }
-      logger.error({
+      console.error({
         name: "editSeveralOffer misc error",
         error,
         sesssionID: req.session.ID,
@@ -165,7 +164,7 @@ const editSeveral = async (req, res) => {
       });
     }
   });
-  logger.info(
+  console.info(
     `${req.session.ID} edited the following offers: ${arr
       .map(({ ID }) => ID)
       .join(", ")}.`
@@ -190,7 +189,7 @@ const edit = async (req, res) => {
         .status(404)
         .json({ content: "Oferto kun ĉi tiu identigilo ne ekzistas." });
     }
-    logger.error({
+    console.error({
       name: "editOffer misc error",
       error,
       sesssionID: req.session.ID,
@@ -202,7 +201,7 @@ const edit = async (req, res) => {
         "Ni ial ne povis ĝisdatigi la oferton. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
     });
   }
-  logger.info(`${req.session.ID} edited offer of id ${offerID}.`);
+  console.info(`${req.session.ID} edited offer of id ${offerID}.`);
   res.json({ content: "La ŝanĝoj estis akceptitaj." });
 };
 
@@ -211,7 +210,7 @@ const get = async (req, res) => {
   const offerID = req.params.offerID;
   const [offer, error] = await handler(getByID, null, offerID);
   if (error) {
-    logger.error({
+    console.error({
       name: "getOffer misc error",
       error,
       sesssionID,
@@ -265,10 +264,10 @@ const addFollower = async (req, res) => {
       }
       throw addError;
     }
-    logger.info(`User ${userID} added offer ${offerID} to their watchlist.`);
+    console.info(`User ${userID} added offer ${offerID} to their watchlist.`);
     res.json({ content: "Farite :)" });
   } catch (e) {
-    logger.error({
+    console.error({
       name: "addFollower misc error",
       error: e,
       userID,
@@ -300,7 +299,7 @@ const removeFollower = async (req, res) => {
           .json({ content: "Uzanto kun ĉi tiu identigilo ne ekzistas." });
       }
     }
-    logger.error({
+    console.error({
       name: "removeFollower misc error",
       error,
       userID,
@@ -342,7 +341,7 @@ const unsubscribe = async (req, res) => {
             email
           );
           if (unsubscribingError) {
-            logger.error({
+            console.error({
               name: "unsubscribe unsubscribingError",
               error: unsubscribingError,
               email: email,
@@ -352,10 +351,10 @@ const unsubscribe = async (req, res) => {
                 "Ni ial ne povis malabonigi vin. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
             });
           }
-          logger.info(`Confirmed ${email}.`);
+          console.info(`Confirmed ${email}.`);
           res.json({ content: "Vi malabonis la servon." });
         } catch (e) {
-          logger.error({
+          console.error({
             name: "confirmEmail misc error",
             error: e,
             token: req.body.token,
@@ -368,7 +367,7 @@ const unsubscribe = async (req, res) => {
       }
     );
   } catch (e) {
-    logger.error({
+    console.error({
       name: "confirmEmail misc error",
       error: e,
       token: req.body.token,
