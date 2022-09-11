@@ -139,7 +139,7 @@
 	<form class="offer" on:submit|preventDefault={checkForm}>
 		<div class="company-picker">
 			<label for="company-selector" class="company-picker__label">Firmao:</label>
-			<div class="select-container offer__select-container">
+			<div class="select-container company-picker__select-container">
 				<Select
 					id="company-selector"
 					items={$session.companies}

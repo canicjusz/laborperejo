@@ -129,7 +129,7 @@ const sendOfferReminder = async (email, offers) => {
                           <small>
                           Kreita ${getDate(
                             offer.created_at
-                          )}, fermonta ${getDate(offer.close_at)}</small
+                          )}, fermota ${getDate(offer.close_at)}</small
                           >
                         </td>
                       </tr>

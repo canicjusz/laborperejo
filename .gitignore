@@ -6,6 +6,7 @@ back-end/app.log
 assets/logo/*
 !assets/logo/company-default.png
 assets/avatar/*
+assets/resume/*
 !assets/avatar/user-default.png
 package-lock.json
 .env

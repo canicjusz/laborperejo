@@ -159,7 +159,7 @@
 										{#if offer.closed}
 											<small class="window__red">La oferto jam fermiĝis</small>
 										{:else}
-											<small>Fermonta {getDate(offer.close_at)}</small>
+											<small>Fermota {getDate(offer.close_at)}</small>
 										{/if}
 									</div>
 								</li>
@@ -275,7 +275,7 @@
 											{#if offer.closed}
 												<small class="window__red">La oferto jam fermiĝis</small>
 											{:else}
-												<small>Fermonta {getDate(offer.close_at)}</small>
+												<small>Fermota {getDate(offer.close_at)}</small>
 											{/if}
 										</div>
 									</li>
@@ -451,7 +451,7 @@
 
 	&__avatar
 		pointer-events: none
-		margin: 0 20px
+		margin-left: 10px
 		@include mixins.circlePhoto(40px)
 
 	&__name

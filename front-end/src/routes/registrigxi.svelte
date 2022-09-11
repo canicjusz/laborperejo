@@ -262,8 +262,8 @@
 		<div class="password form__part">
 			<label for="password" class="form__label"
 				>Pasvorto <small class="form__small"
-					>almenaŭ 8 signoj: unu ĉeflitero, ciferon, unu malĉeflitero. Oni povas uzi tiujn
-					simbolojn: #?!@$%^&*-_</small
+					>(estu almenaŭ 8 signoj, unu ĉeflitero, cifero, malĉeflitero. Oni povas uzi ĉi tiujn
+					simbolojn: #?!@$%^&*-_ )</small
 				></label
 			>
 			<PasswordInput
@@ -294,8 +294,8 @@
 					disabled={sending}
 					bind:checked={values.consent}
 				/><span
-					>Mi akceptas <a href="/regularo" target="_blank">regularon</a> kaj
-					<a href="/privateco" target="_blank">privatecan politikon</a></span
+					>Mi akceptas <a href="/regularo" target="_blank">la regularon</a> kaj
+					<a href="/privateco" target="_blank">la privatecan politikon</a></span
 				></label
 			>
 			<Error value={errors.consent} />

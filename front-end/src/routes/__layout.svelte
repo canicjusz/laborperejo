@@ -101,6 +101,7 @@ main
   min-height: map.get(misc.$heights, "but-header-footer")
 
 footer
+  font-size: typography.$small
   box-sizing: border-box
   border-top: functions.generateBorder(1, colors.$szarszy)
   background: colors.$bialy
@@ -248,21 +249,5 @@ small
 
 .multiSelectItem
   max-width: 180px !important
-
-// input[type="checkbox"]
-//   flex-shrink: 0
-
-// *
-//   overflow-wrap: anywhere
-
-// @media (max-width: 1000px)
-//   .profile, .offer, .company
-//     input:not(input[type="checkbox"])
-//       max-width: 100%
-
-// @media (max-width: 600px)
-//   .container-of-containers
-//     input:not(input[type="checkbox"]), .select-container
-//       max-width: 100%
 
 </style>

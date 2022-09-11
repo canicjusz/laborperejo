@@ -249,7 +249,7 @@
 		if (changed) {
 			if (
 				!confirm(
-					'Ŝajnas, ke vi ne konservis ŝanĝojn. Se vi forlasos la retpaĝon antaŭ konservado, ĉiuj ŝanĝoj nuliĝos. Ĉu vi certe volas forlasi?'
+					'Ŝajnas, ke vi ne konservis la ŝanĝojn. Se vi forlasos la retpaĝon antaŭ konservado, ĉiuj ŝanĝoj nuliĝos. Ĉu vi certe volas forlasi?'
 				)
 			) {
 				cancel();
@@ -462,7 +462,7 @@
 				on:click={goToProfile}
 				disabled={!changed}
 				class="company__button company__button--red company__button--round"
-				type="button">Nuligi ŝanĝoj</button
+				type="button">Nuligi la ŝanĝojn</button
 			>
 			<button
 				type="submit"

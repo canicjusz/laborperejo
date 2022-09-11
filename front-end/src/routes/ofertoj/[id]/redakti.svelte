@@ -129,7 +129,7 @@
 		if (changed) {
 			if (
 				!confirm(
-					'Ŝajnas, ke vi ne konservis ŝanĝojn. Se vi forlasos la retpaĝon antaŭ konservado, ĉiuj ŝanĝoj nuliĝos. Ĉu vi certe volas forlasi?'
+					'Ŝajnas, ke vi ne konservis la ŝanĝojn. Se vi forlasos la retpaĝon antaŭ konservado, ĉiuj ŝanĝoj nuliĝos. Ĉu vi certe volas forlasi?'
 				)
 			) {
 				cancel();
@@ -346,12 +346,12 @@
 				on:click={goToOffer}
 				disabled={!changed}
 				class="offer__button offer__button--red offer__button--round"
-				type="button">Nuligi ŝanĝoj</button
+				type="button">Nuligi la ŝanĝojn</button
 			>
 			<button
 				type="submit"
 				disabled={!changed || sending}
-				class="offer__button offer__button--green offer__button--round">Akcepti ŝanĝojn</button
+				class="offer__button offer__button--green offer__button--round">Akcepti la ŝanĝojn</button
 			>
 		</div>
 	</form>

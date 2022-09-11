@@ -37,7 +37,7 @@
 	<title>Malaboni | Laborperejo</title>
 	<meta
 		name="description"
-		content="Paĝo por malaboni servon rememorigi pri baldaŭ fermontaj ofertoj."
+		content="Paĝo por malaboni servon rememorigi pri baldaŭ fermotaj ofertoj."
 	/>
 	<meta name="robots" content="noindex,nofollow" />
 </svelte:head>

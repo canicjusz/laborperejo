@@ -329,3 +329,17 @@
 {"level":30,"time":1662757300924,"pid":21776,"hostname":"pop-os","msg":"1 edited the following offers: 1."}
 {"level":30,"time":1662758216255,"pid":23292,"hostname":"pop-os","msg":"1 changed owner of company 2 to 2"}
 {"level":30,"time":1662758219002,"pid":23292,"hostname":"pop-os","msg":"1 edited company of id 2."}
+{"level":30,"time":1662888280151,"pid":6670,"hostname":"pop-os","msg":"User 1 edited their profile."}
+{"level":30,"time":1662888444047,"pid":7109,"hostname":"pop-os","msg":"User 1 edited their profile."}
+{"level":30,"time":1662888777405,"pid":7109,"hostname":"pop-os","msg":"1 edited company of id 2."}
+{"level":30,"time":1662889424890,"pid":8412,"hostname":"pop-os","msg":"Removed session of 1"}
+{"level":30,"time":1662889447088,"pid":8412,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":30,"time":1662889457213,"pid":8412,"hostname":"pop-os","msg":"Removed session of 1"}
+{"level":30,"time":1662889477213,"pid":8412,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":30,"time":1662889497637,"pid":8639,"hostname":"pop-os","msg":"Removed session of 1"}
+{"level":30,"time":1662889507191,"pid":8639,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":30,"time":1662889684484,"pid":9285,"hostname":"pop-os","msg":"1 edited company of id 2."}
+{"level":30,"time":1662889724290,"pid":9455,"hostname":"pop-os","msg":"1 edited company of id 2."}
+{"level":30,"time":1662891052167,"pid":11589,"hostname":"pop-os","msg":"Removed session of 1"}
+{"level":30,"time":1662892798947,"pid":11589,"hostname":"pop-os","msg":"Registered janek.bananek371@gmail.com."}
+{"level":30,"time":1662892819773,"pid":11589,"hostname":"pop-os","msg":"User 1 changed their password."}

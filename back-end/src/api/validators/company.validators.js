@@ -27,6 +27,7 @@ const createCompanySchema = yup.object({
 });
 
 const updateCompanySchema = yup.object({
+  name: yup.string().trim().required().max(100),
   logo: yup
     .string()
     .trim()

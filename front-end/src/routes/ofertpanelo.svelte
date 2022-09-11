@@ -139,7 +139,7 @@
 		if (changed) {
 			if (
 				!confirm(
-					'Ŝajnas, ke vi ne konservis ŝanĝojn. Se vi forlasos la retpaĝon antaŭ konservado, ĉiuj ŝanĝoj nuliĝos. Ĉu vi certe volas forlasi?'
+					'Ŝajnas, ke vi ne konservis la ŝanĝojn. Se vi forlasos la retpaĝon antaŭ konservado, ĉiuj ŝanĝoj nuliĝos. Ĉu vi certe volas forlasi?'
 				)
 			) {
 				cancel();
@@ -219,28 +219,30 @@
 								<tr class="table__body-row">
 									<td class="table__cell"><a href={`/ofertoj/${offer.ID}`}>{offer.title}</a></td>
 									<td class="table__cell">
-										<label for={'checkbox-company-' + i} class="table__label">
-											Ĉu la oferto estu fermita?
-											<input
-												id={'checkbox-company-' + i}
-												type="checkbox"
-												class="checkbox"
-												bind:checked={offer.closed}
-												on:change={() => changeState(i)}
-											/>
-										</label>
-										{#if !offer.closed}
-											<label for={'input-company-' + i} title="Fermiĝdato" class="table__label">
+										<span>
+											<label for={'checkbox-company-' + i} class="table__label">
+												Ĉu la oferto estu fermita?
 												<input
-													type="datetime-local"
-													id={'input-company-' + i}
-													placeholder="Fermiĝdato"
-													min={tomorrowFormated}
-													bind:value={offer.close_at}
+													id={'checkbox-company-' + i}
+													type="checkbox"
+													class="checkbox"
+													bind:checked={offer.closed}
 													on:change={() => changeState(i)}
 												/>
 											</label>
-										{/if}</td
+											{#if !offer.closed}
+												<label for={'input-company-' + i} title="Fermiĝdato" class="table__label">
+													<input
+														type="datetime-local"
+														id={'input-company-' + i}
+														placeholder="Fermiĝdato"
+														min={tomorrowFormated}
+														bind:value={offer.close_at}
+														on:change={() => changeState(i)}
+													/>
+												</label>
+											{/if}
+										</span></td
 									>
 									<td class="table__cell">
 										<button
@@ -302,7 +304,7 @@
 			<button
 				on:click={acceptChanges}
 				class="button button--green button--round"
-				disabled={!changed || sending}>Akcepti ŝanĝojn</button
+				disabled={!changed || sending}>Akcepti la ŝanĝojn</button
 			>
 		</div>
 	{/await}

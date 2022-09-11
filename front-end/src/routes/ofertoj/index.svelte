@@ -135,7 +135,7 @@
 						</ul>
 					</div>
 					<div class="offer__content-bottom">
-						Kreita {getDate(offer.created_at)}{#if offer.close_at}, fermonta {getDate(
+						Kreita {getDate(offer.created_at)}{#if offer.close_at}, fermota {getDate(
 								offer.close_at
 							)}{/if}
 					</div>

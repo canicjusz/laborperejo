@@ -43,6 +43,7 @@ const uploadResumeOrAvatar = multer({
   storage,
   limits: { fileSize: maxSize },
   fileFilter: (req, file, cb) => {
+    console.log(file);
     if (file.fieldname === "avatar") {
       if (
         file.mimetype === "image/png" ||
@@ -64,9 +65,7 @@ const uploadResumeOrAvatar = multer({
       } else {
         cb(null, false);
         return cb(
-          new Error(
-            "Nur dosieroj kun jenaj finaĵoj estas akceptataj: .pdf"
-          )
+          new Error("Nur dosieroj kun jenaj finaĵoj estas akceptataj: .pdf")
         );
       }
     }
@@ -83,21 +82,17 @@ const middleware = (upload) => (req, res, next) => {
           .status(400)
           .json({ content: "La dosiero estas tro granda." });
       } else {
-        return res
-          .status(400)
-          .json({
-            content:
-              "Ni ne povis alŝuti la dosieron. La problemo povis okazi pro via retumilo.",
-          });
+        return res.status(400).json({
+          content:
+            "Ni ne povis alŝuti la dosieron. La problemo povis okazi pro via retumilo.",
+        });
       }
     } else if (err) {
       logger.error({ err, sessionID: req.session.ID });
-      return res
-        .status(500)
-        .json({
-          content:
-            "Ni ial ne povis alŝuti la dosieron. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
-        });
+      return res.status(500).json({
+        content:
+          "Ni ial ne povis alŝuti la dosieron. Bonvolu reprovi poste, aŭ kontaktu nin retpoŝte.",
+      });
     }
     next();
   });
