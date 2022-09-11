@@ -44,7 +44,6 @@
 		phone: yup
 			.string()
 			.trim()
-			.transform((string) => (string == '' ? null : string))
 			.matches(
 				/^\+(?:[0-9] ?){6,14}[0-9]$/,
 				'La numero ne validas. Memoru pri telefona landokodo, por klareco vi povas dividi la numeron per spacetoj.'
@@ -226,7 +225,7 @@
 				avatarSrc = URL.createObjectURL(newImg);
 			} else {
 				error.change({
-					error: 'Nur bildoj kaj GIF-movbildoj alŝuteblas.'
+					content: 'Nur bildoj kaj GIF-movbildoj alŝuteblas.'
 				});
 			}
 		}
@@ -242,7 +241,7 @@
 				resumeSrc = URL.createObjectURL(newResume);
 			} else {
 				error.change({
-					error: 'Nur dosieroj kun etendaĵo .pdf alŝuteblas.'
+					content: 'Nur dosieroj kun etendaĵo .pdf alŝuteblas.'
 				});
 			}
 		}

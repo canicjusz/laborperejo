@@ -1,6 +1,7 @@
 <script>
 	export let show;
 	import { cubicInOut } from 'svelte/easing';
+	import { Portal } from 'svelte-teleport';
 
 	const customTransition = () => {
 		return {
@@ -18,9 +19,9 @@
 
 {#if show}
 	<div class="popup__wrapper">
-		<div transition:customTransition class="popup">
+		<form transition:customTransition class="popup" on:submit|preventDefault>
 			<slot />
-		</div>
+		</form>
 	</div>
 {/if}
 

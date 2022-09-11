@@ -2,6 +2,7 @@
 	import { error, feedback } from '$lib/stores';
 	import Nav from '$lib/Nav.svelte';
 	import { onDestroy, onMount } from 'svelte';
+
 	let localError, localFeedback;
 	let errorTimeout, feedbackTimeout;
 	let showError = false,

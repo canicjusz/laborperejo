@@ -2,6 +2,7 @@
 	import { onMount, onDestroy } from 'svelte';
 	import { error } from './stores';
 	import { Editor } from '@tiptap/core';
+	import * as yup from 'yup';
 	import StarterKit from '@tiptap/starter-kit';
 	import Image from '@tiptap/extension-image';
 	import Link from '@tiptap/extension-link';
@@ -20,6 +21,8 @@
 
 	export let placeholder;
 	export let value;
+
+	const isURLCorrect = (url) => yup.string().url().required().isValidSync(url);
 
 	onMount(() => {
 		editor = new Editor({
@@ -49,16 +52,30 @@
 		if (/\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(image)) {
 			editor.chain().focus().setImage({ src: image }).run();
 			showImagePopup = false;
+			image = '';
 		} else {
 			error.change({
-				error: 'Nur Ligeblas bildoj kun etendaĵo jpg, jpeg, png, webp, avif, gif, svg.'
+				content: 'Nur alŝuteblas bildoj kun etendaĵoj jpg, jpeg, png, webp, avif, gif, svg.'
 			});
 		}
 	};
 
 	const addLink = () => {
-		editor.chain().focus().extendMarkRange('link').setLink({ href: link, target: '_blank' }).run();
-		showLinkPopup = false;
+		console.log(isURLCorrect(link), link);
+		if (isURLCorrect(link)) {
+			editor
+				.chain()
+				.focus()
+				.extendMarkRange('link')
+				.setLink({ href: link, target: '_blank' })
+				.run();
+			showLinkPopup = false;
+			link = '';
+		} else {
+			error.change({
+				content: 'Ĉi tiu ligilo ne estas valida.'
+			});
+		}
 	};
 
 	const toggleLink = () => {
@@ -286,15 +303,13 @@
 	<h1 class="popup__title popup__title--blue">Aldoni bildon</h1>
 	<input type="url" class="popup__input" placeholder="Ligilo al bildo" bind:value={image} />
 	<div class="popup__buttons">
-		<button
-			on:click={addImage}
-			class="popup__button popup__button--blue popup__button--round"
-			type="button">Aldoni</button
+		<button on:click={addImage} class="popup__button popup__button--blue popup__button--round"
+			>Aldoni</button
 		>
 		<button
+			type="button"
 			on:click={() => (showImagePopup = false)}
-			class="popup__button popup__button--red popup__button--round"
-			type="button">Nuligi</button
+			class="popup__button popup__button--red popup__button--round">Nuligi</button
 		>
 	</div>
 </Popup>
@@ -302,10 +317,8 @@
 	<h1 class="popup__title popup__title--blue">Aldoni ligilon</h1>
 	<input type="url" class="popup__input" placeholder="Ligilo" bind:value={link} />
 	<div class="popup__buttons">
-		<button
-			on:click={addLink}
-			class="popup__button popup__button--blue popup__button--round"
-			type="button">Aldoni</button
+		<button on:click={addLink} class="popup__button popup__button--blue popup__button--round"
+			>Aldoni</button
 		>
 		<button
 			on:click={() => (showLinkPopup = false)}
@@ -361,8 +374,8 @@
 					background: colors.$czarny
 					color: colors.$bialy
 
-	img 
-		max-width: 100%
+	:global(img) 
+			max-width: 100%
 
 :global
 	.ProseMirror 

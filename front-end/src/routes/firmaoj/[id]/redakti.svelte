@@ -151,7 +151,7 @@
 				newImg = file;
 			} else {
 				error.change({
-					error: 'Nur bildoj kaj GIF-movbildoj alŝuteblas.'
+					content: 'Nur bildoj kaj GIF-movbildoj alŝuteblas.'
 				});
 			}
 		}
