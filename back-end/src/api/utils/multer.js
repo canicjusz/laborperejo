@@ -42,7 +42,6 @@ const uploadResumeOrAvatar = multer({
   storage,
   limits: { fileSize: maxSize },
   fileFilter: (req, file, cb) => {
-    console.log(file);
     if (file.fieldname === "avatar") {
       if (
         file.mimetype === "image/png" ||

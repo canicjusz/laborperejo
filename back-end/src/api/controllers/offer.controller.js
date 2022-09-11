@@ -71,7 +71,6 @@ const getPage = async (req, res) => {
     const offers = await offsetPagination(req.query);
     res.json(offers);
   } catch (e) {
-    console.log(e);
     console.error({ name: "getPageOffer misc error", error: e });
     res.status(500).json({
       content:

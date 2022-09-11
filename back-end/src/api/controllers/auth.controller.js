@@ -317,7 +317,6 @@ const register = async (req, res) => {
     console.info(`${email} registered.`);
     res.json({ content: "Vi registriĝis" });
   } catch (e) {
-    console.log(e);
     console.error({
       name: "register misc error",
       error: e,

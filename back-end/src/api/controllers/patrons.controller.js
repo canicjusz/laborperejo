@@ -19,7 +19,6 @@ const convertPatron = async ({ type, ID, message }) => {
 const get = async (req, res) => {
   const [patrons, error] = await handler(getPatrons, null);
   if (error) {
-    console.log(error);
     console.error({
       name: "getPatrons misc error",
       error,
