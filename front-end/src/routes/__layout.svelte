@@ -61,7 +61,7 @@
 	<slot />
 </main>
 <footer>
-	<a href="https://canicjusz.github.io/" target="_blank">Pri kreinto</a> |
+	<a href="https://canicjusz.github.io/" target="_blank">Pri la kreinto</a> |
 	<a href="/kontakto" target="_blank">Kontakto</a>
 	|
 	<a href="/privateco">Privateca Politiko</a> | <a href="/regularo">Regularo</a>
