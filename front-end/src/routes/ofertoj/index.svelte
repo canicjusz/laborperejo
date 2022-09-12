@@ -187,6 +187,8 @@
 		border: 0
 
 		@media (max-width: 1000px)
+			grid-template-columns: auto
+
 			&-text
 				display: none
 

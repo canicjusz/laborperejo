@@ -21,6 +21,7 @@
 	import { error } from '$lib/stores';
 	import { goto } from '$app/navigation';
 	import Error from '$lib/Error.svelte';
+	import { onMount } from 'svelte';
 
 	const tomorrow = new Date();
 	tomorrow.setDate(tomorrow.getDate() + 1);
@@ -92,8 +93,13 @@
 			.catch((err) => (errors = extractErrors(err)));
 	};
 
-	export let location;
-	let companyID = location?.state?.company || $session.companies[0].ID;
+	let companyID = $session.companies[0].ID;
+	onMount(() => {
+		const stateCompany = history?.state?.company;
+		if (stateCompany) {
+			companyID = stateCompany;
+		}
+	});
 
 	const newOfferValues = {
 		companyID,

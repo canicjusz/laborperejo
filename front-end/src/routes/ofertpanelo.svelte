@@ -337,6 +337,9 @@
 		align-items: center
 		width: max-content
 
+	&__shape
+		margin-top: 10px
+
 .company-picker
 	@include components.company-picker
 

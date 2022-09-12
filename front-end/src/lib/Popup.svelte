@@ -1,7 +1,6 @@
 <script>
 	export let show;
 	import { cubicInOut } from 'svelte/easing';
-	import { Portal } from 'svelte-teleport';
 
 	const customTransition = () => {
 		return {

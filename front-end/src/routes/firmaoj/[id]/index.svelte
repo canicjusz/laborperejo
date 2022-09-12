@@ -5,9 +5,9 @@
 	export let company, offers, pages, id;
 
 	const name = company.name;
-	let p = 2;
+	let p = 1;
 	let isLoading = false;
-	let isMore = false;
+	let isMore = pages > p;
 
 	const loadOffers = () => {
 		isLoading = true;
@@ -15,7 +15,7 @@
 			const { offers: newOffers } = res;
 			offers = offers.concat(newOffers);
 			isLoading = false;
-			isMore = pages > o;
+			isMore = pages > p;
 		});
 	};
 </script>
@@ -94,7 +94,7 @@
 					<button
 						on:click={loadOffers}
 						class="company__button company__button--blue company__button--round"
-						>Montri pliajn ofertojn</button
+						>Montri pliajn</button
 					>
 				{/if}
 			</div>

@@ -407,7 +407,7 @@
 	border-radius: 10px
 	border: functions.generateBorder(1, colors.$szarszy)
 	background: colors.$bialy
-	margin-bottom: 10px
+	margin-bottom: -10px 0 20px 0
 
 	@media (max-width: 700px)
 		grid-template-columns: 1fr

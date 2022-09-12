@@ -643,7 +643,7 @@ hr
 	&-panel
 		width: 949px
 		margin: auto
-		padding: 0 0 10px 0
+		padding: 0 0 20px 0
 
 		&__load-more
 			padding: 10px
@@ -715,7 +715,7 @@ hr
 	.admin-panel
 		box-sizing: border-box
 		margin: 0
-		padding: 0 20px
+		padding: 0 20px 20px 20px
 		width: 100%
 
 	.admin-panel__form
