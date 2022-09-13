@@ -5,7 +5,10 @@
 <div class="contact__container">
 	<div class="contact">
 		<h1 class="contact__title">Kontakto</h1>
-		<p class="contact__paragraph">Vi povas kontakti min diversmaniere:</p>
+		<p class="contact__paragraph">
+			Ĉu vi vidas ke iu malobeas la regularona? Eble vi volas starigi demandon aŭ proponon? Sube
+			estas diversaj manieroj por kontakti min:
+		</p>
 		<ul class="contact__list">
 			<li>
 				Retpoŝte:
