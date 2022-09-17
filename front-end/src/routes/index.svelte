@@ -27,6 +27,9 @@
 		content="Laborperejo estas loko, kie Esperantistaj entreprenistoj renkontiĝas kun Verdaj
   profesiuloj, internacie!"
 	/>
+	<meta property="og:title" content="Laborperejo" />
+	<meta property="og:url" content="https://www.laborperejo.com" />
+	<meta property="og:image" content="https://www.laborperejo.com/og.png" />
 </svelte:head>
 <section class="hero">
 	<img src="/hero.jpeg" alt="Suprsekcia bildo" class="hero__image" />
