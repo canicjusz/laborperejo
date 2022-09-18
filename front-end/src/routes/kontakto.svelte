@@ -6,7 +6,7 @@
 	<div class="contact">
 		<h1 class="contact__title">Kontakto</h1>
 		<p class="contact__paragraph">
-			Ĉu vi vidas ke iu malobeas la regularona? Eble vi volas starigi demandon aŭ proponon? Sube
+			Ĉu vi vidas ke iu malobeas la regularon? Eble vi volas starigi demandon aŭ proponon? Sube
 			estas diversaj manieroj por kontakti min:
 		</p>
 		<ul class="contact__list">

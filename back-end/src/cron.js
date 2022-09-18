@@ -97,7 +97,7 @@ const sendOfferReminder = async (email, offers) => {
                   >
                     <a href="${host}/ofertoj/${offer.ID}">
                       <img
-                        style="padding: 10px"
+                        style="padding: 10px; width: 100px; height: 100px; object-fit: scale-down;"
                         src="${host + offer.company.logo}"
                       />
                     </a>
