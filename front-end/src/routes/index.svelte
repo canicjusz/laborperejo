@@ -69,9 +69,10 @@
 	<div class="learn-more__left">
 		<h1 class="learn-more__title">Kio estas Laborperejo?</h1>
 		<p class="learn-more__paragraph">
-			Laborperejo estas senpaga, sekura kaj nespionanta servo por serĉi kaj afiŝi ofertojn, krei
-			profilojn de firmaoj kaj prezenti vivresumojn sur uzantprofiloj. Kompreneble tio ne estas ĉio!
-			Vi ekscios pri pliaj funkcioj post registriĝo, simple alklaku la suban butonon.
+			Laborperejo estas senpaga, sekura kaj privateco-respektanta servo por serĉi kaj afiŝi
+			ofertojn, krei profilojn de firmaoj kaj prezenti vivresumojn sur uzantprofiloj. Kompreneble
+			tio ne estas ĉio! Vi ekscios pri pliaj funkcioj post registriĝo, simple alklaku la suban
+			butonon.
 		</p>
 		<a
 			class="learn-more__button learn-more__button--green learn-more__button--round"

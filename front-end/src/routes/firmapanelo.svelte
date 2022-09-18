@@ -237,7 +237,9 @@
 							{/each}
 						{:else}
 							<tr class="table__body-row">
-								<td colspan="5" class="table__cell-info">Ĉi tiu firmao ne havas ofertojn</td>
+								<td colspan="5" class="table__cell-info"
+									>Vi ankoraŭ ne administras iun ajn firmaon</td
+								>
 							</tr>
 						{/if}
 					</tbody>
