@@ -224,6 +224,7 @@ const getClosingOffers = async () => {
       },
       company: {
         select: {
+          ID: true,
           name: true,
           logo: true,
         },
