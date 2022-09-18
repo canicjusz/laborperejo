@@ -37,7 +37,7 @@ const sendOfferReminder = async (email, offers) => {
       expiresIn: "60d",
     }
   );
-  const url = `http://${host}/malaboni/${token}`;
+  const url = `${host}/malaboni/${token}`;
   await transporter.sendMail({
     from: ourEmail,
     to: email,
