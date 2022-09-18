@@ -14,7 +14,7 @@
 		<p class="privacy__paragraph">
 			Je registriĝo vi provizas al ni vian plenan nomon, loĝlokon, parolatajn lingvojn,
 			retpoŝtadreson kaj pasvorton. Via nomo, loĝloko kaj parolataj lingvoj estos uzitaj por krei
-			profilon, ĉiuj ĉi informoj estas redakteblaj.
+			profilon.
 		</p>
 		<p class="privacy__paragraph">
 			Vi povas redakti vian profilon kaj memvole aldoni personan priskribon, vivresumon,
@@ -31,15 +31,18 @@
 		<h2 class="privacy__section-title">Celo de kolektado</h2>
 		<p>
 			Viaj datenoj estas utiligataj nur por funkciado de niaj servoj, ekzemple ĉi tiu retejo aŭ
-			retpoŝto-dissendado. Neniu el viaj datenoj estos venditaj al eksteraj liverantoj.
+			retpoŝto-dissendado. Neniu el viaj datenoj estas vendataj al eksteraj liverantoj.
 		</p>
 		<h2 class="privacy__section-title">Servoj de eksteraj liverantoj</h2>
-		<p>Ni uzas servojn de AWS kaj Zoho por retpoŝto-dissendado. Notinde estas ke tiuj ĉi liverantoj ankaŭ pritraktas viajn datenojn.</p>
+		<p>
+			Ni uzas servojn de Amazon Web Services kaj Zoho por retpoŝto-dissendado. Notinde estas ke tiuj
+			ĉi liverantoj ankaŭ pritraktas viajn datenojn.
+		</p>
 		<h2 class="privacy__section-title">Forigo aŭ ŝanĝo de informoj</h2>
 		<p class="privacy__paragraph">
 			Vi povas peti nin aktualigi viajn datenojn (ekz. retpoŝtadreson uzatan por ensaluti), forigi
-			viajn datenoj (sen ajna kialigo), aŭ se iu ŝajnigas vin, vian firmaon. Oni povas kontakti nin
-			interrete per helpo@laborperejo.com.
+			viajn datenoj (sen ajna kialigo), aŭ raporti ŝajnigon de vi, via firmao. Oni povas kontakti
+			nin interrete per helpo@laborperejo.com.
 		</p>
 	</div>
 </div>

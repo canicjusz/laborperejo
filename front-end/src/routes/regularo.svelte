@@ -11,7 +11,7 @@
 		</p>
 		<ol class="rules__list">
 			<li>
-				Oni rajtas havi nur unu konton, unu persono - unu konto. Ĉiuj informoj donitaj dum
+				Oni rajtas havi nur po unu konton, t. e. unu persono - unu konto. Ĉiuj informoj donitaj dum
 				registriĝo rilatu al la kreanto de la konto kaj estu nefikciaj.
 			</li>
 			<li>Oni ne rajtas imiti alian personon, firmaon.</li>

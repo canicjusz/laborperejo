@@ -29,6 +29,9 @@
 	/>
 	<meta property="og:title" content="Laborperejo" />
 	<meta property="og:url" content="https://www.laborperejo.com" />
+	<meta property="og:image:type" content="image/png" />
+	<meta property="og:image:width" content="1230" />
+	<meta property="og:image:height" content="630" />
 	<meta property="og:image" content="https://www.laborperejo.com/og.png" />
 </svelte:head>
 <section class="hero">
@@ -66,9 +69,9 @@
 	<div class="learn-more__left">
 		<h1 class="learn-more__title">Kio estas Laborperejo?</h1>
 		<p class="learn-more__paragraph">
-			Laborperejo estas senpaga, sekura kaj nespionada servo por serĉi kaj afiŝi ofertojn, krei
+			Laborperejo estas senpaga, sekura kaj nespionanta servo por serĉi kaj afiŝi ofertojn, krei
 			profilojn de firmaoj kaj prezenti vivresumojn sur uzantprofiloj. Kompreneble tio ne estas ĉio!
-			Vi ekscios pri pliaj funkcioj post registriĝado, simple alklaku la suban butonon.
+			Vi ekscios pri pliaj funkcioj post registriĝo, simple alklaku la suban butonon.
 		</p>
 		<a
 			class="learn-more__button learn-more__button--green learn-more__button--round"
@@ -79,16 +82,16 @@
 		<h1 class="learn-more__title">Por kiu estas Laborperejo?</h1>
 		<ul class="learn-more__list">
 			<li class="learn-more__list-item">
-				<b>Por Esperanto-asocioj</b>, kiuj serĉas fervorajn volontulojn.
-			</li>
-			<li class="learn-more__list-item">
-				<b>Por tiuj</b>, kiuj revas labori en Esperantujo.
-			</li>
-			<li class="learn-more__list-item">
 				<b>Por labordonantoj</b>, kiuj volas aldoni iomete da internacieco al siaj firmaoj.
 			</li>
 			<li class="learn-more__list-item">
+				<b>Por profesiuloj</b>, kiuj revas labori en Esperantujo.
+			</li>
+			<li class="learn-more__list-item">
 				<b>Por rekrutistoj</b>, kiuj serĉas spertulojn pri diversaj fakoj.
+			</li>
+			<li class="learn-more__list-item">
+				<b>Por Esperanto-asocioj</b>, kiuj serĉas fervorajn volontulojn.
 			</li>
 			<li class="learn-more__list-item">
 				<b>Por studentoj</b>, kiuj volas gajni sperton per eksterlandaj praktikoj.

@@ -141,8 +141,8 @@
 <Popup show={showPopup}>
 	<h1 class="popup__title popup__title--blue">Bonvenon!</h1>
 	<p class="popup__text">
-		Ni sendis al vi ({values.email}) mesaĝon kun registriĝ-ligilo. Bonvolu kontroli vian
-		retpoŝtkeston, atentu ke la retmesaĝo povas iri ĝis 5 minutoj.
+		Ni sendis al vi ({values.email}) registriĝ-konfirmon. Bonvolu kontroli vian retpoŝtkeston,
+		atentu ke la retmesaĝo povas iri ĝis 5 minutoj.
 		<br />
 		Se vi ne vidas la retmesaĝon, bonvolu kontroli spamejon. Se ne venis al vi la retmesaĝo, alklaku
 		la suban butonon.

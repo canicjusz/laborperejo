@@ -107,7 +107,7 @@
 			<a href="/peti-pasvortrestarigon">Ĉu vi forgesis vian pasvorton?</a>
 		</div>
 		<div class="form__part">
-			<a href="/peti-konfirmigxjxetonon">Ĉu vi ne ricevis registriĝ-ligilon?</a>
+			<a href="/peti-konfirmigxjxetonon">Ĉu vi ne ricevis registriĝ-konfirmon?</a>
 		</div>
 		<div class="form__part">
 			<button

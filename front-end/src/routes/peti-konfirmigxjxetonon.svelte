@@ -56,13 +56,13 @@
 </script>
 
 <svelte:head>
-	<title>Peti registriĝ-ligilon | Laborperejo</title>
-	<meta name="description" content="Paĝo por peti registriĝligilon ĉe laborperejo." />
+	<title>Peti registriĝ-konfirmon | Laborperejo</title>
+	<meta name="description" content="Paĝo por peti registriĝ-konfirmon ĉe laborperejo." />
 	<meta name="robots" content="noindex,nofollow" />
 </svelte:head>
 <div class="form__container">
 	<form on:submit|preventDefault={checkForm} class="form">
-		<h1 class="form__title">Peti registriĝ-ligilon</h1>
+		<h1 class="form__title">Peti registriĝ-konfirmon</h1>
 		<div class="form__part">
 			<label for="email" class="form__label">
 				Retpoŝtadreso <input
