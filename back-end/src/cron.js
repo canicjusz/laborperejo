@@ -257,5 +257,5 @@ const removePasswordTokens = async () => {
 };
 
 cron.schedule("0 13 * * *", getClosingOffers);
-cron.schedule("0 * * * *", closeOffers);
-cron.schedule("0 * * * *", removePasswordTokens);
+cron.schedule("* * * * *", closeOffers);
+cron.schedule("* * * * *", removePasswordTokens);
