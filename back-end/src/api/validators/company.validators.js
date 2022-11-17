@@ -33,7 +33,7 @@ const updateCompanySchema = yup.object({
     .trim()
     .matches(/^\/logo(.*)/)
     .required(),
-  industry: yup.string().trim().required().max(100),
+  industry: yup.mixed().oneOf(categories).required(),
   description: yup.string().trim().required().max(8192),
   country: yup.mixed().oneOf(countries).required(),
   address: yup.string().trim().required().max(120),

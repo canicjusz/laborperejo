@@ -31,8 +31,7 @@
 	let creatingMode = false;
 	const schema = yup.object({
 		industry: yup
-			.string()
-			.trim()
+			.mixed()
 			.oneOf(categories, 'Bonvolu elekti branĉon, al kiu apartenas la firmao.')
 			.max(100, 'Branĉo ne povas esti pli longa ol 100 signoj.'),
 		name: yup

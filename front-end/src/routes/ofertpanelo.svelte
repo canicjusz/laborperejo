@@ -41,6 +41,7 @@
 		isMore = false;
 		offers = [];
 		offersChanged = [];
+		originalData = [];
 		loadOffers();
 	};
 
@@ -83,10 +84,11 @@
 	let showPopup = false;
 
 	//if offer has other closed or close_at values, change the state
-	const changeState = (i) =>
-		(offersChanged[i] =
+	const changeState = (i) => {
+		offersChanged[i] =
 			offers[i].closed !== originalData[i].closed ||
-			(offers[i].close_at !== originalData[i].close_at && offers[i].closed === false));
+			(offers[i].close_at !== originalData[i].close_at && offers[i].closed === false);
+	};
 
 	const removeOffer = () => {
 		deleteData(variables.base + `/api/offers/${toRemove.id}`, true)

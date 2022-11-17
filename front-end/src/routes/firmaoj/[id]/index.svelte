@@ -65,7 +65,7 @@
 										<th class="table__column-title">Laborposteno</th>
 										<th class="table__column-title">Lando</th>
 										<th class="table__column-title">Rekompenco</th>
-										<th class="table__column-title">Malfermita</th>
+										<th class="table__column-title">Fermiĝdato</th>
 									</tr>
 								</thead>
 								<tbody class="table__body">
@@ -78,7 +78,7 @@
 												>{offer.reward}
 												{#if offer.salary}<small>(Salajro)</small>{/if}</td
 											>
-											<td class="table__cell">{offer.closed ? 'Ne' : 'Jes'}</td>
+											<td class="table__cell">{getDate(offer.close_at)}</td>
 										</tr>
 									{/each}
 								</tbody>
@@ -204,4 +204,14 @@
 
 .table
 	@include components.table
+
+	&__container
+		max-width: max-content
+		margin: auto
+
+	&__label
+		display: flex
+		column-gap: 10px
+		align-items: center
+		width: max-content
 </style>
