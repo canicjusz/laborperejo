@@ -508,7 +508,7 @@
 							type="email"
 							bind:value={toEdit.email}
 							autocomplete="email"
-							placeholder="Retpoŝtadreso sur via profilo"
+							placeholder="Retpoŝtadreso"
 						/>
 					</div>
 					<Error value={errors.email} />

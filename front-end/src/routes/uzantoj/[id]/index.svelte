@@ -71,7 +71,7 @@
 		</div>
 		<div class="profile__ad">
 			Saluton, Jano ĉi-flanke, la kreinto de la retejo. Vivteni servilon ne estas senpage, <b
-				>160€ jare</b
+				>100€ jare</b
 			>
 			sufiĉus por tiu ĉi celo. Kiel lernejano al kiu ĉiam mankas mono, mi petas vin subteni la projekton
 			per <a href="https://www.paypal.com/paypalme/janomichalako">Paypal</a> aŭ

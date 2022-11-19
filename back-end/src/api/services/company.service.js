@@ -4,7 +4,7 @@ const createByID = async (ID, data) =>
     data: {
       ...data,
       logo: "/logo/company-default.png",
-      description: `Ni estas firmao okupanta pri ${data.industry}`,
+      description: `Ni estas firmao okupanta pri ${data.industry}.`,
       offers: {
         create: [],
       },

@@ -45,7 +45,7 @@
 		industry: yup
 			.mixed()
 			.oneOf(categories, 'Bonvolu elekti branĉon, al kiu apartenas la firmao.')
-			.max(100, 'Branĉo ne povas esti pli longa ol 100 signoj.'),
+			.required('Bonvolu elekti landon, en kiu troviĝas sidejo de la firmao.'),
 		name: yup
 			.string()
 			.trim()

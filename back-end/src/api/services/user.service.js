@@ -27,7 +27,7 @@ const createTemplate = async ({
     },
   };
   const profile = {
-    content: "Bonvenon al mia profilo",
+    content: "Bonvenon al mia profilo.",
     avatar: "/avatar/user-default.png",
     country,
     place,

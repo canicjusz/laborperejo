@@ -7,6 +7,7 @@
 	import Image from '@tiptap/extension-image';
 	import Link from '@tiptap/extension-link';
 	import Placeholder from '@tiptap/extension-placeholder';
+	import ListItem from '@tiptap/extension-list-item';
 	import Popup from './Popup.svelte';
 
 	let element;
@@ -35,8 +36,16 @@
 				}),
 				Placeholder.configure({
 					placeholder
+				}),
+				ListItem.extend({
+					configure: {
+						HTMLAttributes: { style: 'margin: 0' }
+					}
 				})
 			],
+			parseOptions: {
+				preserveWhitespace: 'full'
+			},
 			content: value,
 			onTransaction: () => {
 				// force re-render so `editor.isActive` works as expected
@@ -61,7 +70,6 @@
 	};
 
 	const addLink = () => {
-		console.log(isURLCorrect(link), link);
 		if (isURLCorrect(link)) {
 			editor
 				.chain()
@@ -380,6 +388,13 @@
 :global
 	.ProseMirror 
 		outline: none
+
+		*
+			white-space: pre-wrap
+			word-wrap: break-word
+
+		li *
+			margin: 0
 
 		&.is-editor-empty:first-child::before
 			color: #adb5bd
