@@ -414,6 +414,7 @@
 		grid-template-columns: 1fr
 
 	&__close
+		cursor: pointer
 		right: 10px
 		top: 10px
 		position: absolute

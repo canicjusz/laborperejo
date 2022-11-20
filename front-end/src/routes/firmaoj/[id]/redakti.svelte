@@ -467,7 +467,7 @@
 				type="submit"
 				disabled={!changed || sending}
 				class="company__button company__button--green company__button--round"
-				>Akcepti ŝanĝojn</button
+				>Akcepti la ŝanĝojn</button
 			>
 		</div>
 	</form>

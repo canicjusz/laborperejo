@@ -22,13 +22,13 @@
 			</ul>
 			<p class="patrons__paragraph">
 				Se vi ankaŭ pensas ke ĉi tiu servo estas utila kaj volas iĝi nia mecenato, alklaku <a
-					href="https://www.patreon.com/janomichalako">ĉi tie</a
+					href="https://www.patreon.com/janoeo">ĉi tie</a
 				> kaj elektu rangon "Mecenato".
 			</p>
 		{:else}
 			<p class="patrons__paragraph">
 				Se vi pensas ke ĉi tiu servo estas utila kaj volas iĝi nia unua mecenato, alklaku <a
-					href="https://www.patreon.com/janomichalako">ĉi tie</a
+					href="https://www.patreon.com/janoeo">ĉi tie</a
 				> kaj elektu rangon "Mecenato".
 			</p>
 		{/if}

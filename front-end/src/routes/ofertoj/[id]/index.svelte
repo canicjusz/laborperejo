@@ -85,8 +85,7 @@
 			>
 			sufiĉus por tiu ĉi celo. Kiel lernejano al kiu ĉiam mankas mono, mi petas vin subteni la projekton
 			per <a href="https://www.paypal.com/paypalme/janomichalako">Paypal</a> aŭ
-			<a href="https://www.patreon.com/janomichalako">Patreon</a>. Grandan antaŭdankon al ĉiu
-			donacanto!
+			<a href="https://www.patreon.com/janoeo">Patreon</a>. Grandan antaŭdankon al ĉiu donacanto!
 		</div>
 		<div class="offer__right">
 			<div class="offer__right-element">
