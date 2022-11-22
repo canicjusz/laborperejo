@@ -222,10 +222,16 @@ input:not(input[type="checkbox"])
 .pagination
   padding: 20px
   box-sizing: border-box
-  width: 100%
-  justify-content: center
-  display: flex
-  column-gap: 10px
+
+  &__scroll
+    overflow: auto
+
+  &__container
+    justify-content: center
+    display: flex
+    column-gap: 10px
+    min-width: max-content
+    width: 100%
 
   &__element
     box-sizing: border-box
@@ -244,6 +250,7 @@ input:not(input[type="checkbox"])
   &--bottom
     position: absolute
     bottom: 0
+    width: 100%
 
 small
   font-size: typography.$small

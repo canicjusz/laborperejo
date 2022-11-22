@@ -20,6 +20,8 @@ const getByID = async (offerID) =>
         select: {
           name: true,
           logo: true,
+          phone: true,
+          email: true,
           administrators: {
             select: {
               ID: true,

@@ -69,15 +69,19 @@
 	</div>
 {:else if visiblePages.length !== 0}
 	<div class="pagination">
-		{#each visiblePages as page}
-			<!-- svelte-ignore a11y-invalid-attribute -->
-			<a
-				href="javascript:void()"
-				class="pagination__element"
-				class:pagination__element--selected={currentPage === page}
-				on:click|preventDefault={() => changePage(page)}>{page}</a
-			>
-		{/each}
+		<div class="pagination__scroll">
+			<div class="pagination__container">
+				{#each visiblePages as page}
+					<!-- svelte-ignore a11y-invalid-attribute -->
+					<a
+						href="javascript:void()"
+						class="pagination__element"
+						class:pagination__element--selected={currentPage === page}
+						on:click|preventDefault={() => changePage(page)}>{page}</a
+					>
+				{/each}
+			</div>
+		</div>
 	</div>
 	<div class="profile__container">
 		{#each profiles as profile}
@@ -120,15 +124,19 @@
 		{/each}
 	</div>
 	<div class="pagination pagination--bottom">
-		{#each visiblePages as page}
-			<!-- svelte-ignore a11y-invalid-attribute -->
-			<a
-				href="javascript:void()"
-				class="pagination__element"
-				class:pagination__element--selected={currentPage === page}
-				on:click|preventDefault={() => changePage(page)}>{page}</a
-			>
-		{/each}
+		<div class="pagination__scroll">
+			<div class="pagination__container">
+				{#each visiblePages as page}
+					<!-- svelte-ignore a11y-invalid-attribute -->
+					<a
+						href="javascript:void()"
+						class="pagination__element"
+						class:pagination__element--selected={currentPage === page}
+						on:click|preventDefault={() => changePage(page)}>{page}</a
+					>
+				{/each}
+			</div>
+		</div>
 	</div>
 {:else}
 	<div class="nothing__container">Pardonon, ni nenion trovis</div>

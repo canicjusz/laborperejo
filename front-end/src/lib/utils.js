@@ -129,7 +129,7 @@ const changeObservationCreator = () => {
 const generateNavigation = (pages, currentPage) => {
 	if (pages < 1) return [];
 	const visiblePages = [currentPage];
-	while (visiblePages.length < pages && visiblePages.length < 5) {
+	while (visiblePages.length < pages && visiblePages.length < 10) {
 		const firstElement = visiblePages[0];
 		const lastElement = visiblePages[visiblePages.length - 1];
 		if (firstElement > 1) {
