@@ -40,16 +40,9 @@
 		unsubscribeError();
 		unsubscribeFeedback();
 	});
-
-	navigating.subscribe((val) => {
-		showLoading = Boolean(val);
-	});
 </script>
 
 <Nav />
-{#if showLoading}
-	xDDDDDDDDDDDDDDDDDDDDDDDdd
-{/if}
 {#if unsubscribeError}
 	<div
 		class="alert alert--error"
@@ -69,13 +62,16 @@
 	</div>
 {/if}
 <main>
-	{#if showLoading}
-		<div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+	{#if $navigating}
+		<div
+			style="width: 100%; display: flex; justify-content: center; align-items: center; padding-top: 10px;"
+		>
 			<Spinner />
 		</div>
-	{:else}
-		<slot />
 	{/if}
+	<div style:display={$navigating ? 'none' : 'initial'}>
+		<slot />
+	</div>
 </main>
 <footer>
 	<a href="https://canicjusz.github.io/" target="_blank">Pri la kreinto</a> |
