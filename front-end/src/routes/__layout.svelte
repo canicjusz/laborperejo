@@ -1,6 +1,8 @@
 <script>
 	import { error, feedback } from '$lib/stores';
 	import Nav from '$lib/Nav.svelte';
+	import Spinner from '$lib/Spinner.svelte';
+	import { navigating } from '$app/stores';
 	import { onDestroy, onMount } from 'svelte';
 
 	let localError, localFeedback;
@@ -8,6 +10,7 @@
 	let showError = false,
 		showFeedback = false;
 	let disabledAnimations = true;
+	let showLoading = false;
 
 	const unsubscribeError = error.subscribe((val) => {
 		if (val) {
@@ -37,9 +40,16 @@
 		unsubscribeError();
 		unsubscribeFeedback();
 	});
+
+	navigating.subscribe((val) => {
+		showLoading = Boolean(val);
+	});
 </script>
 
 <Nav />
+{#if showLoading}
+	xDDDDDDDDDDDDDDDDDDDDDDDdd
+{/if}
 {#if unsubscribeError}
 	<div
 		class="alert alert--error"
@@ -59,7 +69,15 @@
 	</div>
 {/if}
 <main>
-	<slot />
+	{#if showLoading}
+		<div
+			style="height: 100%; width: 100%; display: flex; justify-content: center; align-items: center;"
+		>
+			<Spinner />
+		</div>
+	{:else}
+		<slot />
+	{/if}
 </main>
 <footer>
 	<a href="https://canicjusz.github.io/" target="_blank">Pri la kreinto</a> |
