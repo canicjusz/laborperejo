@@ -33,6 +33,9 @@
 			hideKeys.forEach((key) => {
 				hide[key] = true;
 			});
+			if (!element.classList.contains('hamburger')) {
+				hamburgerClicked = false;
+			}
 		}
 	};
 	const deleteSession = () =>

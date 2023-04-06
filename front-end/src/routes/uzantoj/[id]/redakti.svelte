@@ -186,8 +186,8 @@
 		$session.profile = profile;
 		$session.name = name;
 		$session.subscription = subscription;
-		URL.revokeObjectURL(avatarSrc);
-		URL.revokeObjectURL(resumeSrc);
+		// URL.revokeObjectURL(avatarSrc);
+		// URL.revokeObjectURL(resumeSrc);
 		goToProfile();
 	};
 
