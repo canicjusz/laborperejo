@@ -342,12 +342,6 @@
 				<a class="navbar__link" href={`/uzantoj/${$session.ID}`}>Mia profilo</a>
 			</li>
 			<li class="navbar__element">
-				<a class="navbar__link" href="/firmapanelo">Firmopanelo</a>
-			</li>
-			<li class="navbar__element">
-				<a class="navbar__link" href="/ofertpanelo">Ofertpanelo</a>
-			</li>
-			<li class="navbar__element">
 				<a class="navbar__link" href="/restarigi-pasvorton">Restarigi pasvorton</a>
 			</li>
 			<li on:click={deleteSession} class="navbar__element">
