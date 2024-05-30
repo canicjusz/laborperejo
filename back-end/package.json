@@ -5,10 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
     "install-all": "npm i && cd client && npm i",
     "heroku-postbuild": "prisma generate && cd client && npm install && npm run build",
-    "dev": "nodemon index.js"
+    "start": "nodemon index.js"
   },
   "prisma": {
     "seed": "node prisma/seed.js"

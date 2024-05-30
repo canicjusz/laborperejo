@@ -19,7 +19,7 @@ import prismaPkg from "@prisma/client";
 const { Prisma } = prismaPkg;
 import transporter from "../../nodemailer.js";
 const ourEmail = '"Jan Michalak" <oficejo@laborperejo.com>';
-const host = process.env.BASE;
+const host = process.env.EMAIL_DOMAIN;
 
 const sendConfirmationEmail = async (email) => {
   const token = jwt.sign(

@@ -25,7 +25,7 @@ const getDate = (string) => {
 };
 
 const ourEmail = '"Jan Michalak" <oficejo@laborperejo.com>';
-const host = process.env.BASE;
+const host = process.env.EMAIL_DOMAIN;
 
 const sendOfferReminder = async (email, offers) => {
   const token = jwt.sign(
