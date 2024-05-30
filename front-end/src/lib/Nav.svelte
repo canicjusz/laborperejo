@@ -197,7 +197,7 @@
 						<a class="navbar__link" href="/restarigi-pasvorton">Restarigi pasvorton</a>
 					</li>
 					<li on:click={deleteSession} class="navbar__sub-element">
-						<a class="navbar__link" href="javascript:void()">Elsaluti</a>
+						<a class="navbar__link" href={'javascript:void()'}>Elsaluti</a>
 					</li>
 				</ul>
 			</li>
@@ -348,7 +348,7 @@
 				<a class="navbar__link" href="/restarigi-pasvorton">Restarigi pasvorton</a>
 			</li>
 			<li on:click={deleteSession} class="navbar__element">
-				<a class="navbar__link" href="javascript:void()">Elsaluti</a>
+				<a class="navbar__link" href={'javascript:void()'}>Elsaluti</a>
 			</li>
 		{:else}
 			<li class="navbar__element">

@@ -6,6 +6,12 @@ const config = {
 	preprocess: preprocessor(),
 	kit: {
 		adapter: adapter({ out: 'build' })
+	},
+	onwarn: (warning, handler) => {
+		if (warning.code === 'css-unused-selector') {
+			return;
+		}
+		handler(warning);
 	}
 };
 

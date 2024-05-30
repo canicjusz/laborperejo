@@ -75,7 +75,7 @@
 				{#each visiblePages as page}
 					<!-- svelte-ignore a11y-invalid-attribute -->
 					<a
-						href="javascript:void()"
+						href={'javascript:void()'}
 						class="pagination__element"
 						class:pagination__element--selected={currentPage === page}
 						on:click|preventDefault={() => changePage(page)}>{page}</a
@@ -153,7 +153,7 @@
 				{#each visiblePages as page}
 					<!-- svelte-ignore a11y-invalid-attribute -->
 					<a
-						href="javascript:void()"
+						href={'javascript:void()'}
 						class="pagination__element"
 						class:pagination__element--selected={currentPage === page}
 						on:click|preventDefault={() => changePage(page)}>{page}</a
